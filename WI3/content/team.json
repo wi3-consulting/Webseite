@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "bild": "Maxi.JPG",
+      "name": "Maximilian Strub",
+      "rolle": "CEO",
+      "beschreibung": "Strategische Gesamtleitung und übergeordnete Ausrichtung von WI3 – Consulting.",
+      "bildausschnitt": "center 15%"
+    },
+    {
+      "bild": "Marie.jpeg",
+      "name": "Marie Maiwald",
+      "rolle": "COO",
+      "beschreibung": "Verantwortlich für operative Abläufe, interne Prozesse und die strukturierte Umsetzung.",
+      "bildausschnitt": "center top"
+    },
+    {
+      "bild": "Naze.jpeg",
+      "name": "Nazerawi Negash",
+      "rolle": "CFO",
+      "beschreibung": "Zuständig für finanzielle Planung, Controlling und wirtschaftliche Stabilität.",
+      "bildausschnitt": "center top"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+# ============================================================
+# Decap CMS – Konfiguration für WI3 – Consulting
+# Login: Netlify Identity + Git Gateway
+# ============================================================
+
+backend:
+  name: git-gateway
+  branch: main            # ggf. auf "master" ändern, falls dein Repo so heißt
+
+# Zum lokalen Testen am eigenen Rechner (siehe ANLEITUNG-CMS.md).
+# Auf der Live-Seite hat diese Zeile keine Wirkung.
+local_backend: true
+
+# Ordner, in dem alle hochgeladenen Bilder landen:
+media_folder: "assets/uploads"
+# Pfad, mit dem die Bilder auf der Website eingebunden werden:
+public_folder: "/assets/uploads"
+
+# Sprache der Oberfläche
+locale: "de"
+
+site_url: https://www.wi3consulting.de
+logo_url: /Logo_blau.png
+
+# Hinweistext beim Veröffentlichen
+publish_mode: simple
+
+collections:
+  # ---------------- GALERIE ----------------
+  - name: "galerie"
+    label: "Galerie (Startseite)"
+    description: "Bilder für die Galerie-Sektion auf der Startseite. Neues Bild hinzufügen, hochladen, Beschreibung eintragen, speichern."
+    files:
+      - name: "galerie"
+        label: "Galerie-Bilder"
+        file: "content/galerie.json"
+        fields:
+          - label: "Bilder"
+            name: "items"
+            label_singular: "Bild"
+            widget: "list"
+            summary: "{{fields.beschreibung}}"
+            fields:
+              - { label: "Bild", name: "bild", widget: "image" }
+              - { label: "Beschreibung", name: "beschreibung", widget: "string", hint: "Bildunterschrift, die unter dem Bild erscheint." }
+              - { label: "Alt-Text (Barrierefreiheit)", name: "alt", widget: "string", required: false, hint: "Optional: kurze Beschreibung für Screenreader." }
+
+  # ---------------- TEAM ----------------
+  - name: "team"
+    label: "Team (Vorstand)"
+    description: "Fotos, Namen, Rollen und Texte des Vorstandsteams."
+    files:
+      - name: "team"
+        label: "Team-Mitglieder"
+        file: "content/team.json"
+        fields:
+          - label: "Mitglieder"
+            name: "items"
+            label_singular: "Mitglied"
+            widget: "list"
+            summary: "{{fields.name}} – {{fields.rolle}}"
+            fields:
+              - { label: "Foto", name: "bild", widget: "image" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Rolle (z. B. CEO)", name: "rolle", widget: "string" }
+              - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+              - { label: "Bildausschnitt", name: "bildausschnitt", widget: "string", required: false, default: "center top", hint: "Steuert den sichtbaren Bildausschnitt, z. B. 'center top' oder 'center 15%'." }
+
+  # ---------------- RESSORTS ----------------
+  - name: "ressorts"
+    label: "Ressorts (Bilder)"
+    description: "Bilder, Titel und Beschreibungen der Ressort-Karten."
+    files:
+      - name: "ressorts"
+        label: "Ressort-Karten"
+        file: "content/ressorts.json"
+        fields:
+          - label: "Ressorts"
+            name: "items"
+            label_singular: "Ressort"
+            widget: "list"
+            summary: "{{fields.titel}}"
+            fields:
+              - { label: "Bild", name: "bild", widget: "image" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+              - { label: "Datum", name: "datum", widget: "string", required: false }

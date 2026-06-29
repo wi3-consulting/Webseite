@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Das Team von WI3 – Consulting: Vorstand und Ressortleitungen. Engagierte Studierende mit Leidenschaft für Beratung, Innovation und Teamwork." />
+  <title>Team – WI3 Consulting an der HSRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="brand" aria-label="WI3 – Consulting, Startseite">
+        <img src="Logo_blau.png" alt="WI3 Logo" />
+        <span><span class="brand__name">WI3 – Consulting</span><span class="brand__sub">an der HSRM</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Hauptnavigation">
+        <a href="index.html">Home</a>
+        <a href="unternehmen.html">Unternehmen</a>
+        <a href="studierende.html">Studierende</a>
+        <a href="ressorts.html">Ressorts</a>
+        <a href="team.html" aria-current="page">Team</a>
+        <a href="index.html#contact">Kontakt</a>
+      </nav>
+      <div class="nav__cta">
+        <a href="index.html#contact" class="btn btn--primary">Kontakt aufnehmen</a>
+        <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" aria-label="Menü schließen"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+    <a href="index.html">Home</a>
+    <a href="unternehmen.html">Unternehmen</a>
+    <a href="studierende.html">Studierende</a>
+    <a href="ressorts.html">Ressorts</a>
+    <a href="team.html">Team</a>
+    <a href="index.html#contact">Kontakt</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero hero--page">
+    <div class="hero__media">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80" alt="" />
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light">Unser Team</p>
+        <h1 class="display">Die Menschen<span class="soft">— hinter WI3.</span></h1>
+        <p class="hero__lead">Engagierte Studierende mit Leidenschaft für Beratung, Innovation und Teamwork. Lerne unser Vorstandsteam und unsere Ressortleitungen kennen.</p>
+        <div class="btn-row">
+          <a href="#vorstand" class="btn btn--light">Team kennenlernen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="index.html#contact" class="btn btn--ghost">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VORSTAND -->
+  <section class="section" id="vorstand">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Das Team</p>
+        <h2 class="h2">Vorstand &amp; Organisation</h2>
+        <p class="lead">Drei Köpfe an der Spitze, die Strategie, Betrieb und Finanzen von WI3 – Consulting verantworten.</p>
+      </div>
+      <!-- Inhalt wird aus content/team.json geladen; folgende Karten sind Fallback. -->
+      <div class="grid grid-3" id="team-grid" data-stagger="100">
+        <article class="team-card reveal">
+          <div class="team-card__media"><img src="Maxi.JPG" alt="Maximilian Strub – CEO" style="object-position:center 15%;" /></div>
+          <div class="team-card__body">
+            <p class="team-card__role">CEO</p>
+            <h3 class="h3">Maximilian Strub</h3>
+            <p>Strategische Gesamtleitung und übergeordnete Ausrichtung von WI3 – Consulting.</p>
+          </div>
+        </article>
+        <article class="team-card reveal">
+          <div class="team-card__media"><img src="Marie.jpeg" alt="Marie Maiwald – COO" style="object-position:center top;" /></div>
+          <div class="team-card__body">
+            <p class="team-card__role">COO</p>
+            <h3 class="h3">Marie Maiwald</h3>
+            <p>Verantwortlich für operative Abläufe, interne Prozesse und die strukturierte Umsetzung.</p>
+          </div>
+        </article>
+        <article class="team-card reveal">
+          <div class="team-card__media"><img src="Naze.jpeg" alt="Nazerawi Negash – CFO" style="object-position:center top;" /></div>
+          <div class="team-card__body">
+            <p class="team-card__role">CFO</p>
+            <h3 class="h3">Nazerawi Negash</h3>
+            <p>Zuständig für finanzielle Planung, Controlling und wirtschaftliche Stabilität.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESSORTLEITUNGEN -->
+  <section class="section bg-paper-2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Ressortleitungen</p>
+        <h2 class="h2">Die Köpfe hinter unseren Fachbereichen</h2>
+      </div>
+      <div class="grid grid-3" data-stagger="80">
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14h2"/><path d="m3 3 7.07 7.07"/><path d="M6.905 12.51a3 3 0 0 0-.88.88 1 1 0 1 0 3 3l.88-.88"/></svg></div>
+          <p class="team-card__role" style="margin-top:16px;">Ressortleitung Sales</p>
+          <h3 class="h3" style="margin-top:6px;">N.N.</h3>
+          <p>Akquise neuer Kunden, Erstkontakt, Beziehungspflege und Abschluss von Beratungsprojekten.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+          <p class="team-card__role" style="margin-top:16px;">Ressortleitung Marketing</p>
+          <h3 class="h3" style="margin-top:6px;">N.N.</h3>
+          <p>Sichtbarkeit nach außen steigern, Social Media, Content-Erstellung und Employer Branding.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <p class="team-card__role" style="margin-top:16px;">Ressortleitung HR</p>
+          <h3 class="h3" style="margin-top:6px;">N.N.</h3>
+          <p>Gewinnung, Auswahl und Onboarding neuer Mitglieder sowie Organisation vereinsinterner Veranstaltungen.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg></div>
+          <p class="team-card__role" style="margin-top:16px;">Ressortleitung Events</p>
+          <h3 class="h3" style="margin-top:6px;">N.N.</h3>
+          <p>Planung und Durchführung der Lean &amp; Earn Schulungstage sowie interner und externer Events.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
+          <p class="team-card__role" style="margin-top:16px;">Ressortleitung IT</p>
+          <h3 class="h3" style="margin-top:6px;">N.N.</h3>
+          <p>Technische Infrastruktur, Website-Pflege, Datenmanagement und Digitalisierung interner Prozesse.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg></div>
+          <p class="team-card__role" style="margin-top:16px;">Ressortleitung Controlling</p>
+          <h3 class="h3" style="margin-top:6px;">N.N.</h3>
+          <p>Finanzielle Transparenz, Kennzahlen, Planung und wirtschaftliche Steuerung.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band section">
+    <div class="cta-band__media"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=80" alt="" /></div>
+    <div class="container reveal">
+      <h2 class="h2">Werde Teil unseres Teams!</h2>
+      <p>Du willst mitgestalten? Wir suchen engagierte Studierende, die Lust auf echte Projekte und ein starkes Netzwerk haben.</p>
+      <div class="btn-row"><a href="index.html#contact" class="btn btn--gold">Jetzt bewerben
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="brand"><span><span class="brand__name">WI3 – Consulting</span><span class="brand__sub">an der HSRM</span></span></a>
+          <p>Wiesbadens studentische Unternehmensberatung. Wir verbinden frische Köpfe mit echten Projekten und gestalten die Wirtschaft von morgen.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <a href="unternehmen.html">Unternehmen</a>
+          <a href="studierende.html">Studierende</a>
+          <a href="ressorts.html">Ressorts</a>
+          <a href="team.html">Team</a>
+        </div>
+        <div class="footer__col">
+          <h4>Kontakt</h4>
+          <p>Bleichstraße, Wiesbaden</p>
+          <a href="mailto:maximilian.strub@wi3-consulting.de">maximilian.strub@wi3-consulting.de</a>
+          <p>Mo–Fr: 08:00 – 19:00 Uhr</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 WI3 – Consulting an der HSRM</p>
+        <div><a href="impressum.html">Impressum</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie" role="dialog" aria-label="Cookie-Einstellungen">
+    <div class="cookie__inner">
+      <div class="cookie__text">
+        <b>Cookie-Einstellungen</b>
+        <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Weitere Informationen finden Sie in unserer <a href="#">Datenschutzerklärung</a>.</p>
+      </div>
+      <div class="cookie__actions">
+        <button class="btn btn--outline" data-consent="essential">Nur notwendige</button>
+        <button class="btn btn--primary" data-consent="all">Alle akzeptieren</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/app.js" defer></script>
+  <script src="assets/cms-render.js" defer></script>
+</body>
+</html>

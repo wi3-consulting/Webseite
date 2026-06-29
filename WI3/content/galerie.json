@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "bild": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+      "beschreibung": "Teamarbeit an einem Beratungsprojekt",
+      "alt": "WI3 Team bei der gemeinsamen Projektarbeit"
+    },
+    {
+      "bild": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80",
+      "beschreibung": "Lean & Earn Schulungstag",
+      "alt": "Workshop-Situation mit Teilnehmenden"
+    },
+    {
+      "bild": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80",
+      "beschreibung": "Gemeinsamer Austausch im Team",
+      "alt": "Besprechung am Tisch"
+    }
+  ]
+}

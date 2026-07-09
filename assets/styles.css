@@ -242,6 +242,10 @@ p{ margin:0; }
 .feature-card__body{ padding:30px 30px 26px; }
 .feature-card__body h3{ color:var(--navy); margin-top:14px; }
 .feature-card__body p{ margin-top:12px; color:var(--muted); font-size:1rem; }
+.feature-card__lead{ margin-top:16px; padding-top:16px; border-top:1px solid var(--line-soft); display:flex; align-items:center; gap:10px; }
+.feature-card__lead img{ width:36px; height:36px; border-radius:50%; object-fit:cover; flex:none; }
+.feature-card__lead-label{ display:block; font-size:.68rem; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--accent-700); }
+.feature-card__lead-name{ display:block; color:var(--navy); font-weight:600; font-size:.92rem; }
 .feature-card__foot{ border-top:1px solid var(--line-soft); padding:16px 30px; display:flex; align-items:center; gap:8px; color:var(--muted); font-size:.85rem; }
 .feature-card__foot svg{ width:16px; height:16px; }
 

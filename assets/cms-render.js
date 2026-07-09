@@ -99,6 +99,12 @@
     var html = items.map(function (it, i) {
       var icon = RESSORT_ICONS[i % RESSORT_ICONS.length];
       var foot = it.datum ? '<div class="feature-card__foot">' + CAL_ICON + esc(it.datum) + '</div>' : '';
+      var lead = it.ressortleiter ? (
+        '<div class="feature-card__lead">' +
+          (it.ressortleiter_bild ? '<img src="' + esc(it.ressortleiter_bild) + '" alt="' + esc(it.ressortleiter) + '" loading="lazy" />' : '') +
+          '<span><span class="feature-card__lead-label">Ressortleitung</span><span class="feature-card__lead-name">' + esc(it.ressortleiter) + '</span></span>' +
+        '</div>'
+      ) : '';
       return '' +
         '<article class="feature-card reveal">' +
           '<div class="feature-card__media"><img src="' + esc(it.bild) + '" alt="' + esc(it.titel) + '" loading="lazy" /></div>' +
@@ -106,6 +112,7 @@
             '<div class="card__icon">' + icon + '</div>' +
             '<h3 class="h3">' + esc(it.titel) + '</h3>' +
             '<p>' + esc(it.beschreibung) + '</p>' +
+            lead +
           '</div>' + foot +
         '</article>';
     }).join("");

@@ -12,7 +12,7 @@ backend:
 local_backend: true
 
 # Ordner, in dem alle hochgeladenen Bilder landen:
-media_folder: "assets/uploads"
+media_folder: "WI3/assets/uploads"
 # Pfad, mit dem die Bilder auf der Website eingebunden werden:
 public_folder: "/assets/uploads"
 
@@ -33,7 +33,7 @@ collections:
     files:
       - name: "galerie"
         label: "Galerie-Bilder"
-        file: "content/galerie.json"
+        file: "WI3/content/galerie.json"
         fields:
           - label: "Bilder"
             name: "items"
@@ -52,7 +52,7 @@ collections:
     files:
       - name: "team"
         label: "Team-Mitglieder"
-        file: "content/team.json"
+        file: "WI3/content/team.json"
         fields:
           - label: "Mitglieder"
             name: "items"
@@ -73,7 +73,7 @@ collections:
     files:
       - name: "ressorts"
         label: "Ressort-Karten"
-        file: "content/ressorts.json"
+        file: "WI3/content/ressorts.json"
         fields:
           - label: "Ressorts"
             name: "items"

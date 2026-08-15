@@ -1,0 +1,38 @@
+{
+  "start": {
+    "hero_bild": "https://upload.wikimedia.org/wikipedia/commons/2/2a/The_magnificent_neoclassical_fa%C3%A7ade_of_the_Kurhaus_%28spa_house%29_in_Wiesbaden_%289066882115%29.jpg",
+    "hero_alt": "Kurhaus Wiesbaden",
+    "hero_ausschnitt": "center center",
+    "werte_bild": "/assets/uploads/teamwork-case-arbeit.jpg",
+    "werte_alt": "WI3-Mitglieder bei der gemeinsamen Fallbearbeitung"
+  },
+  "unternehmen": {
+    "hero_bild": "/assets/uploads/vorstand-skyline.jpg",
+    "hero_alt": "WI3-Berater vor der Skyline",
+    "hero_ausschnitt": "center 12%",
+    "cta_bild": "/assets/uploads/handschlag-kooperation.jpg",
+    "cta_alt": "Handschlag zum Projektstart",
+    "cta_ausschnitt": "center center"
+  },
+  "studierende": {
+    "hero_bild": "/assets/uploads/lean-and-earn-hoersaal.jpg",
+    "hero_alt": "Studierende bei den Lean & Earn Schulungstagen",
+    "hero_ausschnitt": "center center",
+    "cta_bild": "/assets/uploads/teamabend-dinner.jpg",
+    "cta_alt": "Gemeinsamer Teamabend",
+    "cta_ausschnitt": "center center"
+  },
+  "ressorts": {
+    "hero_bild": "/assets/uploads/konferenzraum-runde.jpg",
+    "hero_alt": "WI3-Team im Konferenzraum",
+    "hero_ausschnitt": "center center"
+  },
+  "team": {
+    "hero_bild": "/assets/uploads/team-buehne-jcnetwork.jpg",
+    "hero_alt": "Das WI3-Team auf der Bühne",
+    "hero_ausschnitt": "center 35%",
+    "cta_bild": "/assets/uploads/praesentation-abschluss.jpg",
+    "cta_alt": "WI3-Team nach der Abschlusspräsentation",
+    "cta_ausschnitt": "center center"
+  }
+}

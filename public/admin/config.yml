@@ -1,0 +1,167 @@
+# ============================================================
+# Decap CMS – Konfiguration für WI3 – Consulting
+# Login: Netlify Identity + Git Gateway
+# ============================================================
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Zum lokalen Testen am eigenen Rechner (siehe ANLEITUNG-CMS.md).
+# Auf der Live-Seite hat diese Zeile keine Wirkung.
+local_backend: true
+
+# Ordner im Repository, in dem hochgeladene Bilder abgelegt werden.
+# Alles unter public/ landet beim Build unverändert im Web-Root.
+media_folder: "public/assets/uploads"
+# Pfad, mit dem die Bilder auf der Website eingebunden werden:
+public_folder: "/assets/uploads"
+
+# Sprache der Oberfläche
+locale: "de"
+
+site_url: https://www.wi3consulting.de
+logo_url: /Logo_blau.png
+
+# Hinweistext beim Veröffentlichen
+publish_mode: simple
+
+collections:
+  # ---------------- SEITENBILDER ----------------
+  - name: "seiten"
+    label: "Seitenbilder"
+    description: "Die großen Bilder jeder Seite: Kopfbereich (Hero) und die farbigen Aufruf-Banner am Seitenende."
+    files:
+      - name: "seiten"
+        label: "Bilder der einzelnen Seiten"
+        file: "content/seiten.json"
+        fields:
+          - label: "Startseite"
+            name: "start"
+            widget: "object"
+            fields:
+              - { label: "Kopfbild", name: "hero_bild", widget: "image", hint: "Großes Bild ganz oben auf der Startseite." }
+              - { label: "Bildbeschreibung Kopfbild", name: "hero_alt", widget: "string", required: false, hint: "Kurze Beschreibung für Screenreader und Suchmaschinen." }
+              - { label: "Bildausschnitt Kopfbild", name: "hero_ausschnitt", widget: "string", required: false, default: "center center", hint: "Auf breiten Bildschirmen wird oben und unten abgeschnitten. 'center top' zeigt mehr vom oberen Rand, 'center 25%' liegt dazwischen." }
+              - { label: "Bild im Werte-Abschnitt", name: "werte_bild", widget: "image" }
+              - { label: "Bildbeschreibung Werte", name: "werte_alt", widget: "string", required: false }
+
+          - label: "Für Unternehmen"
+            name: "unternehmen"
+            widget: "object"
+            fields:
+              - { label: "Kopfbild", name: "hero_bild", widget: "image" }
+              - { label: "Bildbeschreibung Kopfbild", name: "hero_alt", widget: "string", required: false }
+              - { label: "Bildausschnitt Kopfbild", name: "hero_ausschnitt", widget: "string", required: false, default: "center center", hint: "Kleinerer Prozentwert zeigt mehr vom oberen Bildrand, z. B. 'center 22%'." }
+              - { label: "Bild im Aufruf-Banner", name: "cta_bild", widget: "image", hint: "Hintergrundbild des Banners „Bereit für frische Perspektiven?“." }
+              - { label: "Bildbeschreibung Banner", name: "cta_alt", widget: "string", required: false }
+              - { label: "Bildausschnitt Banner", name: "cta_ausschnitt", widget: "string", required: false, default: "center center" }
+
+          - label: "Für Studierende"
+            name: "studierende"
+            widget: "object"
+            fields:
+              - { label: "Kopfbild", name: "hero_bild", widget: "image" }
+              - { label: "Bildbeschreibung Kopfbild", name: "hero_alt", widget: "string", required: false }
+              - { label: "Bildausschnitt Kopfbild", name: "hero_ausschnitt", widget: "string", required: false, default: "center center" }
+              - { label: "Bild im Aufruf-Banner", name: "cta_bild", widget: "image" }
+              - { label: "Bildbeschreibung Banner", name: "cta_alt", widget: "string", required: false }
+              - { label: "Bildausschnitt Banner", name: "cta_ausschnitt", widget: "string", required: false, default: "center center" }
+
+          - label: "Ressorts"
+            name: "ressorts"
+            widget: "object"
+            fields:
+              - { label: "Kopfbild", name: "hero_bild", widget: "image" }
+              - { label: "Bildbeschreibung Kopfbild", name: "hero_alt", widget: "string", required: false }
+              - { label: "Bildausschnitt Kopfbild", name: "hero_ausschnitt", widget: "string", required: false, default: "center center" }
+
+          - label: "Team"
+            name: "team"
+            widget: "object"
+            fields:
+              - { label: "Kopfbild", name: "hero_bild", widget: "image" }
+              - { label: "Bildbeschreibung Kopfbild", name: "hero_alt", widget: "string", required: false }
+              - { label: "Bildausschnitt Kopfbild", name: "hero_ausschnitt", widget: "string", required: false, default: "center center" }
+              - { label: "Bild im Aufruf-Banner", name: "cta_bild", widget: "image" }
+              - { label: "Bildbeschreibung Banner", name: "cta_alt", widget: "string", required: false }
+              - { label: "Bildausschnitt Banner", name: "cta_ausschnitt", widget: "string", required: false, default: "center center" }
+
+  # ---------------- GALERIE ----------------
+  - name: "galerie"
+    label: "Galerie (Startseite)"
+    description: "Bilder für die Galerie-Sektion auf der Startseite. Neues Bild hinzufügen, hochladen, speichern. Die Galerie kommt bewusst ohne Bildunterschriften aus – eine Unterschrift erscheint nur dort, wo ihr eine eintragt."
+    files:
+      - name: "galerie"
+        label: "Galerie-Bilder"
+        file: "content/galerie.json"
+        fields:
+          - label: "Bilder"
+            name: "items"
+            label_singular: "Bild"
+            widget: "list"
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: "Bild", name: "bild", widget: "image" }
+              - { label: "Bildbeschreibung (Alt-Text)", name: "alt", widget: "string", hint: "Beschreibt sachlich, was zu sehen ist – für Screenreader und Suchmaschinen. Erscheint nicht sichtbar auf der Seite." }
+              - { label: "Bildunterschrift (optional)", name: "beschreibung", widget: "string", required: false, hint: "Leer lassen, wenn ihr euch beim Anlass nicht sicher seid. Nur ausgefüllte Unterschriften werden unter dem Bild angezeigt." }
+
+  # ---------------- TEAM ----------------
+  - name: "team"
+    label: "Team (Vorstand)"
+    description: "Fotos, Namen, Rollen und Texte des Vorstandsteams."
+    files:
+      - name: "team"
+        label: "Team-Mitglieder"
+        file: "content/team.json"
+        fields:
+          - label: "Mitglieder"
+            name: "items"
+            label_singular: "Mitglied"
+            widget: "list"
+            summary: "{{fields.name}} – {{fields.rolle}}"
+            fields:
+              - { label: "Foto", name: "bild", widget: "image" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Rolle (z. B. CEO)", name: "rolle", widget: "string" }
+              - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+              - { label: "Bildausschnitt", name: "bildausschnitt", widget: "string", required: false, default: "center top", hint: "Steuert den sichtbaren Bildausschnitt, z. B. 'center top' oder 'center 15%'." }
+
+  # ---------------- RESSORTS ----------------
+  - name: "ressorts"
+    label: "Ressorts"
+    description: "Bilder, Titel und Beschreibungen der Ressorts. Diese Liste steuert die Ressorts-Seite, die Kacheln auf der Startseite, die Ressortleitungen auf der Team-Seite und die Übersicht bei „Für Studierende“."
+    files:
+      - name: "ressorts"
+        label: "Ressort-Karten"
+        file: "content/ressorts.json"
+        fields:
+          - label: "Ressorts"
+            name: "items"
+            label_singular: "Ressort"
+            widget: "list"
+            summary: "{{fields.titel}} – {{fields.ressortleiter}}"
+            fields:
+              - { label: "Bild", name: "bild", widget: "image" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+              - { label: "Datum", name: "datum", widget: "string", required: false }
+              - { label: "Ressortleiter/in", name: "ressortleiter", widget: "string", required: false, hint: "Name der Person, die dieses Ressort leitet. Leer lassen zeigt „N.N.“ an." }
+              - { label: "Profilbild Ressortleitung", name: "ressortleiter_bild", widget: "image", required: false, hint: "Profilfoto der Ressortleitung (optional)." }
+
+  # ---------------- GLOBALE EINSTELLUNGEN ----------------
+  - name: "einstellungen"
+    label: "Logo & Kontaktdaten"
+    description: "Logo, Vereinsname und Kontaktangaben. Diese Werte erscheinen in der Kopfzeile, im Fußbereich und im Kontaktbereich."
+    files:
+      - name: "einstellungen"
+        label: "Allgemeine Angaben"
+        file: "content/einstellungen.json"
+        fields:
+          - { label: "Logo", name: "logo", widget: "image", hint: "Wird in der Kopfzeile angezeigt." }
+          - { label: "Bildbeschreibung Logo", name: "logo_alt", widget: "string", required: false }
+          - { label: "Name der Organisation", name: "marke", widget: "string" }
+          - { label: "Text im Fußbereich", name: "footer_text", widget: "text" }
+          - { label: "Adresse", name: "adresse", widget: "string" }
+          - { label: "E-Mail", name: "email", widget: "string" }
+          - { label: "Öffnungszeiten", name: "oeffnungszeiten", widget: "string" }

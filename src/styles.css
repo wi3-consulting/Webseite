@@ -44,6 +44,10 @@ html{
   scroll-behavior:smooth;
   scroll-padding-top: calc(var(--nav-h) + 16px);
   -webkit-text-size-adjust:100%;
+  /* Platz für die Scrollbar immer freihalten. Ohne das ändert sich die
+     nutzbare Breite je nach Seitenlänge und der zentrierte Header springt
+     beim Wechsel zwischen kurzen und langen Seiten. */
+  scrollbar-gutter: stable;
 }
 body{
   margin:0;
@@ -154,7 +158,13 @@ p{ margin:0; }
 .nav__links a::after{ content:""; position:absolute; left:0; bottom:-1px; width:0; height:1.5px; background:var(--accent); transition:width .35s var(--ease); }
 .nav__links a:hover, .nav__links a[aria-current="page"]{ color:var(--navy); }
 .nav__links a:hover::after, .nav__links a[aria-current="page"]::after{ width:100%; }
-.nav__cta{ display:flex; align-items:center; gap:14px; }
+.nav__cta{ display:flex; align-items:center; justify-content:flex-end; gap:14px; }
+/* Der Button heißt je nach Seite anders ("Kontakt aufnehmen" / "Projekt
+   anfragen" / "Jetzt bewerben") und war dadurch unterschiedlich breit – das
+   hat bei jedem Seitenwechsel die Navigationslinks mitgezogen. Die feste
+   Mindestbreite entspricht der längsten Beschriftung, damit die Leiste steht.
+   Längere Beschriftungen lassen den Button weiterhin mitwachsen. */
+.nav__cta .btn{ min-width:12.5rem; justify-content:center; }
 .nav__burger{ display:none; background:none; border:0; padding:8px; color:var(--navy); }
 
 /* Mobile menu */
@@ -404,14 +414,19 @@ p{ margin:0; }
 /* ============================================================
    Responsive
    ============================================================ */
+/* Logo, sechs Links und Button brauchen zusammen rund 985px. Darunter auf das
+   Burger-Menü umschalten – vorher stand dieser Umbruch bei 860px, dadurch lief
+   die Navigationsleiste zwischen 861 und 985px über den rechten Rand hinaus. */
+@media (max-width: 1010px){
+  .nav__links, .nav__cta .btn{ display:none; }
+  .nav__burger{ display:inline-flex; }
+}
 @media (max-width: 1024px){
   .grid-4{ grid-template-columns:repeat(2,1fr); }
   .process{ grid-template-columns:repeat(2,1fr); row-gap:40px; }
   .footer__top{ grid-template-columns:1fr 1fr; }
 }
 @media (max-width: 860px){
-  .nav__links, .nav__cta .btn{ display:none; }
-  .nav__burger{ display:inline-flex; }
   .split{ grid-template-columns:1fr; gap:34px; }
   .split--reverse .split__media{ order:0; }
   .grid-3{ grid-template-columns:repeat(2,1fr); }

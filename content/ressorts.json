@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "bild": "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=700&q=80",
+      "bild": "/assets/uploads/ressort-sales.jpg",
       "titel": "Sales",
       "beschreibung": "Akquise neuer Kunden, Erstkontakt, Beziehungspflege und Abschluss von Beratungsprojekten.",
       "datum": "17.11.2025",
@@ -9,7 +9,7 @@
       "ressortleiter_bild": ""
     },
     {
-      "bild": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=700&q=80",
+      "bild": "/assets/uploads/ressort-marketing.jpg",
       "titel": "Marketing",
       "beschreibung": "Sichtbarkeit nach außen steigern, Social Media, Content-Erstellung und Employer Branding.",
       "datum": "17.11.2025",
@@ -17,7 +17,7 @@
       "ressortleiter_bild": ""
     },
     {
-      "bild": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=700&q=80",
+      "bild": "/assets/uploads/ressort-hr.jpg",
       "titel": "HR",
       "beschreibung": "Gewinnung, Auswahl und Onboarding neuer Mitglieder, Vorstellungsgespräche, Mitgliederbetreuung und Organisation vereinsinterner Veranstaltungen.",
       "datum": "17.11.2025",
@@ -25,7 +25,7 @@
       "ressortleiter_bild": ""
     },
     {
-      "bild": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=700&q=80",
+      "bild": "/assets/uploads/ressort-events.jpg",
       "titel": "Eventmanagement",
       "beschreibung": "Planung und Durchführung der Lean & Earn Schulungstage sowie interner und externer Workshops und Events.",
       "datum": "17.11.2025",
@@ -33,9 +33,17 @@
       "ressortleiter_bild": ""
     },
     {
-      "bild": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=700&q=80",
+      "bild": "/assets/uploads/ressort-it.jpg",
       "titel": "IT",
       "beschreibung": "Technische Infrastruktur bereitstellen und weiterentwickeln, Tools einführen, Website-Pflege, Datenmanagement und Digitalisierung interner Prozesse.",
+      "datum": "17.11.2025",
+      "ressortleiter": "",
+      "ressortleiter_bild": ""
+    },
+    {
+      "bild": "/assets/uploads/ressort-controlling.jpg",
+      "titel": "Controlling",
+      "beschreibung": "Finanzielle Transparenz, Kennzahlen, Planung und wirtschaftliche Steuerung für nachhaltige Entscheidungen.",
       "datum": "17.11.2025",
       "ressortleiter": "",
       "ressortleiter_bild": ""

@@ -1,2 +1,50 @@
 [build]
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
+
+# Die gebauten JS-/CSS-Dateien tragen einen Hash im Namen und ändern sich
+# bei jeder Änderung. Sie dürfen deshalb dauerhaft zwischengespeichert werden.
+[[headers]]
+  for = "/build/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Alte .html-Adressen auf die neuen SPA-Routen umleiten,
+# damit bestehende Links und Suchtreffer nicht ins Leere laufen.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/unternehmen.html"
+  to = "/unternehmen"
+  status = 301
+
+[[redirects]]
+  from = "/studierende.html"
+  to = "/studierende"
+  status = 301
+
+[[redirects]]
+  from = "/ressorts.html"
+  to = "/ressorts"
+  status = 301
+
+[[redirects]]
+  from = "/team.html"
+  to = "/team"
+  status = 301
+
+[[redirects]]
+  from = "/impressum.html"
+  to = "/impressum"
+  status = 301
+
+# Single Page App: alle übrigen Adressen an index.html ausliefern.
+# Vorhandene Dateien (z. B. /admin/, /assets/…) gehen vor und
+# werden davon nicht berührt.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -2,3 +2,10 @@
 .netlify
 .DS_Store
 .fuse_hidden*
+
+# Build & Abhängigkeiten
+node_modules
+dist
+
+# Lokale Editor-/Werkzeugkonfiguration
+.claude

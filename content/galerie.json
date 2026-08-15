@@ -1,19 +1,34 @@
 {
   "items": [
     {
-      "bild": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
-      "beschreibung": "Teamarbeit an einem Beratungsprojekt",
-      "alt": "WI3 Team bei der gemeinsamen Projektarbeit"
+      "bild": "/assets/uploads/lean-and-earn-vortrag.jpg",
+      "beschreibung": "",
+      "alt": "Vortragende erläutert eine Präsentationsfolie im Hörsaal"
     },
     {
-      "bild": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80",
-      "beschreibung": "Lean & Earn Schulungstag",
-      "alt": "Workshop-Situation mit Teilnehmenden"
+      "bild": "/assets/uploads/workshop-flipchart.jpg",
+      "beschreibung": "",
+      "alt": "Workshop-Situation: eine Person erklärt etwas am Whiteboard, mehrere Teilnehmende hören zu"
     },
     {
-      "bild": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80",
-      "beschreibung": "Gemeinsamer Austausch im Team",
-      "alt": "Besprechung am Tisch"
+      "bild": "/assets/uploads/fachvortrag-konferenzraum.jpg",
+      "beschreibung": "",
+      "alt": "Teilnehmende verfolgen einen Vortrag an einer langen Konferenztafel"
+    },
+    {
+      "bild": "/assets/uploads/projektarbeit-meetingraum.jpg",
+      "beschreibung": "",
+      "alt": "Mehrere Personen arbeiten mit Laptops gemeinsam an einem Besprechungstisch"
+    },
+    {
+      "bild": "/assets/uploads/analyse-auswertung.jpg",
+      "beschreibung": "",
+      "alt": "Zwei Personen gehen gemeinsam eine ausgedruckte Auswertung mit Diagrammen durch"
+    },
+    {
+      "bild": "/assets/uploads/networking-messestand.jpg",
+      "beschreibung": "",
+      "alt": "Gespräch zwischen zwei Personen an einem Messestand"
     }
   ]
 }

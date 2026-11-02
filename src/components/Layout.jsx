@@ -1,19 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { einstellungen, NAV_LINKS, KONTAKT_LINK } from "../lib/content.js";
 import { useReveal, useScrollEffects } from "../lib/effects.js";
 import { Burger, Close } from "./Icons.jsx";
 
-/* Beschriftung des Nav-Buttons je Seite – wie in der bisherigen Fassung. */
-const CTA_LABEL = {
-  "/unternehmen": "Projekt anfragen",
-  "/studierende": "Jetzt bewerben",
-};
-
 function Nav({ onOpenMenu }) {
-  const { pathname } = useLocation();
-  const ctaLabel = CTA_LABEL[pathname] || "Kontakt aufnehmen";
-
   return (
     <header className="nav">
       <div className="nav__inner">
@@ -26,10 +17,9 @@ function Nav({ onOpenMenu }) {
           {NAV_LINKS.map((l) => (
             <NavLink key={l.to} to={l.to} end={l.to === "/"}>{l.label}</NavLink>
           ))}
-          <Link to={KONTAKT_LINK}>Kontakt</Link>
         </nav>
         <div className="nav__cta">
-          <Link to={KONTAKT_LINK} className="btn btn--primary">{ctaLabel}</Link>
+          <Link to={KONTAKT_LINK} className="btn btn--primary">Kontakt aufnehmen</Link>
           <button className="nav__burger" aria-label="Menü öffnen" aria-expanded="false" onClick={onOpenMenu}>
             <Burger />
           </button>
@@ -80,6 +70,7 @@ function Footer() {
               {NAV_LINKS.filter((l) => l.to !== "/").map((l) => (
                 <Link key={l.to} to={l.to}>{l.label}</Link>
               ))}
+              <Link to={KONTAKT_LINK}>Kontakt</Link>
             </div>
             <div className="footer__col">
               <h4>Kontakt</h4>
@@ -94,10 +85,8 @@ function Footer() {
           </div>
         </div>
       </footer>
-      <div style={{ background: "#021A38", padding: "0.9rem 1.5rem", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-        <span style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.6)" }}>
-          Hinweis: Diese Website wurde mit Unterstützung von Künstlicher Intelligenz erstellt.
-        </span>
+      <div className="footer__note">
+        Hinweis: Diese Website wurde mit Unterstützung von Künstlicher Intelligenz erstellt.
       </div>
     </>
   );
@@ -138,10 +127,19 @@ function CookieBanner() {
   );
 }
 
-/* Setzt die Scrollposition beim Seitenwechsel und springt zu #anker. */
+/* Setzt die Scrollposition beim Seitenwechsel und springt zu #anker.
+   Hängt an `key`, nicht an der Adresse: Ein erneuter Klick auf denselben
+   Link erzeugt einen neuen key, die Adresse bleibt aber gleich – sonst
+   würde der zweite Klick nichts tun. */
 function ScrollManager() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
+    // Alte Links auf das frühere Formular der Startseite weiterleiten.
+    if (pathname === "/" && hash === "#contact") {
+      navigate(KONTAKT_LINK, { replace: true });
+      return;
+    }
     if (hash) {
       const el = document.querySelector(hash);
       if (el) {
@@ -150,7 +148,7 @@ function ScrollManager() {
       }
     }
     window.scrollTo(0, 0);
-  }, [pathname, hash]);
+  }, [pathname, hash, key, navigate]);
   return null;
 }
 
@@ -165,7 +163,6 @@ export default function Layout() {
 
   return (
     <>
-      <div className="progress" aria-hidden="true" />
       <Nav onOpenMenu={() => setMenuOpen(true)} />
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
       <ScrollManager />

@@ -1,4 +1,4 @@
-# wi3 – Bilder verwalten mit dem CMS (Decap)
+# wi3 consulting – Bilder verwalten mit dem CMS (Decap)
 
 Die Website hat ein eingebautes Content-Management-System. Damit können auch
 Personen ohne Programmierkenntnisse **Bilder samt Beschreibung hinzufügen,

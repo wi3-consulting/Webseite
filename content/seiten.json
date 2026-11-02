@@ -4,7 +4,9 @@
     "hero_alt": "Kurhaus Wiesbaden",
     "hero_ausschnitt": "center center",
     "werte_bild": "/assets/uploads/teamwork-case-arbeit.jpg",
-    "werte_alt": "wi3-Mitglieder bei der gemeinsamen Fallbearbeitung"
+    "werte_alt": "wi3-Mitglieder bei der gemeinsamen Fallbearbeitung",
+    "netzwerk_bild": "/assets/uploads/team-buehne-jcnetwork.jpg",
+    "netzwerk_alt": "Das wi3-Team auf der Bühne der JCNetwork Days"
   },
   "unternehmen": {
     "hero_bild": "/assets/uploads/vorstand-skyline.jpg",
@@ -20,7 +22,9 @@
     "hero_ausschnitt": "center center",
     "cta_bild": "/assets/uploads/teamabend-dinner.jpg",
     "cta_alt": "Gemeinsamer Teamabend",
-    "cta_ausschnitt": "center center"
+    "cta_ausschnitt": "center center",
+    "jcn_bild": "/assets/uploads/networking-messestand.jpg",
+    "jcn_alt": "Gespräch mit einem Unternehmen auf der Firmenmesse der JCNetwork Days"
   },
   "ressorts": {
     "hero_bild": "/assets/uploads/konferenzraum-runde.jpg",

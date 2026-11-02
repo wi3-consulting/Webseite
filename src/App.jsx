@@ -6,6 +6,7 @@ import Studierende from "./pages/Studierende.jsx";
 import Ressorts from "./pages/Ressorts.jsx";
 import Team from "./pages/Team.jsx";
 import Impressum from "./pages/Impressum.jsx";
+import Kontakt from "./pages/Kontakt.jsx";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="studierende" element={<Studierende />} />
         <Route path="ressorts" element={<Ressorts />} />
         <Route path="team" element={<Team />} />
+        <Route path="kontakt" element={<Kontakt />} />
         <Route path="impressum" element={<Impressum />} />
 
         {/* Alte .html-Adressen bleiben erreichbar, falls sie noch irgendwo verlinkt sind. */}

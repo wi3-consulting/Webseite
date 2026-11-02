@@ -1,43 +1,36 @@
 import { seiten, galerieItems, ressortItems, einstellungen } from "../lib/content.js";
 import { BtnLink, Hero, SectionHead, Stat } from "../components/Blocks.jsx";
-import { Clock, Mail, MapPin, RESSORT_ICONS } from "../components/Icons.jsx";
-import { usePageMeta } from "../lib/meta.js";
+import { RESSORT_ICONS } from "../components/Icons.jsx";
+import { MARKE, usePageMeta } from "../lib/meta.js";
 
 const PILLARS = [
-  { num: "01", titel: "wi3 consulting", text: "Wiesbadens studentische Denkfabrik: frische Perspektiven, top Fachwissen und unbändiger Tatendrang. Hier wird Theorie zur Praxis und Zukunft gestaltet." },
-  { num: "02", titel: "Für Unternehmen", text: "Smarte Lösungen – günstig, schnell und innovativ. Arbeiten Sie mit Wiesbadens Zukunftsgestaltern zusammen.", link: { to: "/unternehmen", label: "Leistungen ansehen" } },
-  { num: "03", titel: "Für Studierende", text: "Gestalte die Zukunft mit echten Projekten, einem starken Team und sichtbarem Impact.", link: { to: "/studierende", label: "Deine Vorteile" } },
-  { num: "04", titel: "Kontakt", text: "Gute Ideen beginnen mit einem Gespräch. Nicht zuschauen, sondern anpacken – kontaktiere uns unverbindlich.", link: { to: "/#contact", label: "Gespräch starten" } },
+  { titel: "Wer wir sind", text: "wi3 consulting ist ein eingetragener Verein von Studierenden aus Wiesbaden und Umgebung. Wir bearbeiten Beratungsprojekte für Unternehmen und verbinden dabei Studium und Praxis." },
+  { titel: "Für Unternehmen", text: "Analysen, Konzepte und Workshops zu fairen Konditionen – umgesetzt von Teams mit aktuellem Fachwissen aus dem Studium.", link: { to: "/unternehmen", label: "Zu den Leistungen" } },
+  { titel: "Für Studierende", text: "Projekterfahrung mit echten Kunden, Verantwortung im Verein und ein Netzwerk, das über das Studium hinaus trägt.", link: { to: "/studierende", label: "Mitglied werden" } },
+  { titel: "Kontakt", text: "Sie haben eine konkrete Fragestellung oder möchten uns kennenlernen? Wir melden uns zeitnah zurück.", link: { to: "/kontakt", label: "Kontakt aufnehmen" } },
 ];
 
 const STATS = [
-  { zahl: 40, suffix: "+", label: "Berater" },
-  { zahl: 30, suffix: "+", label: "Projekte abgeschlossen" },
+  { zahl: 40, suffix: "+", label: "Mitglieder" },
+  { zahl: 30, suffix: "+", label: "abgeschlossene Projekte" },
   { zahl: 350, suffix: "+", label: "Workshops" },
   { zahl: 4, suffix: "", label: "Hochschulen" },
 ];
 
 const WERTE = [
-  { num: "01", titel: "Vertrauen", text: "Vertrauen ist unsere Basis: Kunden vertrauen uns, wir vertrauen unseren Mitgliedern und geben ihnen volle Rückendeckung." },
-  { num: "02", titel: "Neugier", text: "Wir sind neugierig, lernen schnell und bringen frisches Wissen direkt in jedes Projekt ein." },
-  { num: "03", titel: "Professionalität", text: "Wir liefern konsequent hochwertige Ergebnisse und arbeiten strukturiert, zuverlässig und termingerecht." },
-  { num: "04", titel: "Impact", text: "Am Ende des Tages zählt das Ergebnis: echte Veränderungen und höchste Kundenzufriedenheit." },
-  { num: "05", titel: "Freiheit", text: "Jeder bekommt maximale Handlungsfreiheit und übernimmt zugleich volle Verantwortung für sein Ergebnis." },
+  { titel: "Vertrauen", text: "Kunden können sich auf uns verlassen. Intern geben wir unseren Mitgliedern Rückhalt und Verantwortung." },
+  { titel: "Neugier", text: "Wir arbeiten uns schnell in neue Themen ein und bringen aktuelles Wissen aus dem Studium in die Projekte." },
+  { titel: "Professionalität", text: "Strukturiertes Vorgehen, verlässliche Absprachen und Ergebnisse, die termingerecht vorliegen." },
+  { titel: "Wirkung", text: "Entscheidend ist, was beim Kunden ankommt: umsetzbare Ergebnisse und messbare Verbesserungen." },
+  { titel: "Eigenverantwortung", text: "Jedes Mitglied hat Gestaltungsspielraum und trägt die Verantwortung für das eigene Ergebnis." },
 ];
-
-const KOOPERATIONEN = ["Kooperationspartner", "Praxisprojekte", "Netzwerk", "Unternehmen", "Region Wiesbaden", "Campus"];
-
-/* Zahlwort für die Ressort-Überschrift, damit Text und Datenlage
-   nicht auseinanderlaufen, wenn im CMS ein Ressort dazukommt. */
-const ZAHLWORT = ["Null", "Ein", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieben", "Acht", "Neun", "Zehn"];
 
 export default function Home() {
   usePageMeta(
-    "wi3 consulting | Studentische Unternehmensberatung Wiesbaden",
-    "wi3 consulting: Wiesbadens studentische Unternehmensberatung. Frische Perspektiven, fundiertes Fachwissen und praxisnahe Lösungen für Unternehmen aus der Region."
+    `${MARKE} | Studentische Unternehmensberatung Wiesbaden`,
+    `${MARKE} ist die studentische Unternehmensberatung in Wiesbaden. Wir unterstützen Unternehmen bei Digitalisierung, Prozessen, Marktanalysen und Strategie.`
   );
   const s = seiten.start;
-  const anzahl = ressortItems.length;
 
   return (
     <>
@@ -45,35 +38,27 @@ export default function Home() {
         bild={s.hero_bild}
         alt={s.hero_alt}
         ausschnitt={s.hero_ausschnitt}
-        eyebrow="Wiesbaden · Innovativ · Beratend"
-        titel="We shape tomorrow"
-        titelSoft="— today."
-        lead="Wiesbadens studentische Denkfabrik. Wir verbinden studentische Energie mit echten Praxisprojekten und geben Nachwuchstalenten die Bühne, die Zukunft aktiv zu gestalten."
-        sub="Weil die Zukunft frische Köpfe braucht: Talente aus Wiesbaden und Umgebung gestalten gemeinsam die Wirtschaft von morgen."
+        eyebrow={MARKE}
+        titel="Studentische Unternehmensberatung in Wiesbaden"
+        lead="Wir unterstützen Unternehmen aus der Region bei Fragen zu Digitalisierung, Prozessen, Markt und Strategie – mit engagierten Studierenden und aktuellem Fachwissen."
       >
-        <BtnLink to="/#about" className="btn btn--light" withArrow>Mehr erfahren</BtnLink>
-        <BtnLink to="/#contact" className="btn btn--ghost">Jetzt Kontakt aufnehmen</BtnLink>
+        <BtnLink to="/unternehmen" className="btn btn--light" withArrow>Leistungen ansehen</BtnLink>
+        <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
       </Hero>
 
       {/* ===================== POSITIONIERUNG ===================== */}
       <section className="section" id="positionierung">
         <div className="container">
           <SectionHead
-            eyebrow="Was wi3 ausmacht"
-            titel="Frische Perspektiven, die Theorie zur Praxis machen."
-            lead="Unternehmen stehen vor strategischen, digitalen und organisatorischen Herausforderungen. Wir liefern smarte Lösungen – günstig, schnell und innovativ – und schaffen zugleich Studierenden den Raum, echten Impact zu erzeugen."
+            titel="Über uns"
+            lead="Unternehmen stehen vor strategischen, digitalen und organisatorischen Fragen. Wir erarbeiten dazu Lösungen – und geben Studierenden die Möglichkeit, Verantwortung in echten Projekten zu übernehmen."
           />
           <div className="pillars" data-stagger="80">
             {PILLARS.map((p) => (
-              <div className="pillar reveal" key={p.num}>
-                <span className="pillar__num">{p.num}</span>
-                <div>
-                  <h3 className="h3">{p.titel}</h3>
-                  <p>
-                    {p.text}{" "}
-                    {p.link && <BtnLink to={p.link.to} className="textlink">{p.link.label}</BtnLink>}
-                  </p>
-                </div>
+              <div className="pillar reveal" key={p.titel}>
+                <h3 className="h3">{p.titel}</h3>
+                <p>{p.text}</p>
+                {p.link && <BtnLink to={p.link.to} className="textlink">{p.link.label}</BtnLink>}
               </div>
             ))}
           </div>
@@ -85,16 +70,10 @@ export default function Home() {
         <div className="container">
           <div className="split">
             <div className="split__body reveal">
-              <p className="eyebrow eyebrow--light">Lassen wir die Zahlen sprechen</p>
-              <h2 className="h2" style={{ color: "#fff", marginTop: 14 }}>
-                So gestalten wir Wiesbadens studentische Unternehmensberatung.
-              </h2>
-              <p className="lead" style={{ color: "rgba(255,255,255,.82)", marginTop: 20 }}>
-                wi3 verbindet Talente der Region mit realen Projekten für smarte Lösungen in Wirtschaft und Gesellschaft.
-              </p>
-              <p style={{ color: "rgba(255,255,255,.72)", marginTop: 16 }}>
-                Unser Kern: frische Ideen, top Fachwissen und Teamgeist. Wir stehen für Innovation, Nachhaltigkeit und
-                Impact – weil die Zukunft von mutigen Köpfen gemacht wird.
+              <h2 className="h2" style={{ color: "#fff" }}>{MARKE} in Zahlen</h2>
+              <p className="lead" style={{ color: "rgba(255,255,255,.82)", marginTop: 18 }}>
+                Wir bringen Studierende verschiedener Hochschulen mit Unternehmen aus Wiesbaden
+                und der Region zusammen.
               </p>
             </div>
             <div className="stats reveal" style={{ "--d": "120ms" }}>
@@ -107,32 +86,30 @@ export default function Home() {
       {/* ===================== WERTE ===================== */}
       <section className="section bg-paper-2" id="values">
         <div className="container">
-          <div className="split split--reverse" style={{ marginBottom: "clamp(36px,5vw,60px)" }}>
+          <div className="split split--reverse" style={{ marginBottom: "clamp(36px,5vw,56px)" }}>
             <div className="split__media js-parallax reveal">
               <img src={s.werte_bild} alt={s.werte_alt} loading="lazy" />
             </div>
             <div className="split__body reveal">
-              <p className="eyebrow">Unsere Werte</p>
-              <h2 className="h2" style={{ marginTop: 14 }}>Was wi3 im Kern ausmacht</h2>
-              <p className="lead" style={{ marginTop: 18 }}>
-                Fünf Prinzipien prägen jede Zusammenarbeit – nach innen wie nach außen.
+              <h2 className="h2">Unsere Werte</h2>
+              <p className="lead">
+                Diese Grundsätze gelten in jedem Projekt und in der Zusammenarbeit innerhalb des Vereins.
               </p>
             </div>
           </div>
 
           <div className="grid grid-3" data-stagger="90">
             {WERTE.map((w) => (
-              <article className="card reveal" key={w.num}>
-                <span className="card__num">{w.num}</span>
+              <article className="card card--rule reveal" key={w.titel}>
                 <h3 className="h3">{w.titel}</h3>
                 <p>{w.text}</p>
               </article>
             ))}
-            <article className="card reveal" style={{ background: "var(--navy)", color: "#fff", borderColor: "transparent", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <h3 className="h3" style={{ color: "#fff" }}>Bereit für ein Projekt mit Wirkung?</h3>
-              <p style={{ color: "rgba(255,255,255,.78)" }}>Lernen Sie kennen, wie wir arbeiten.</p>
-              <BtnLink to="/#contact" className="textlink"
-                style={{ color: "#fff", borderColor: "var(--accent)", marginTop: 18, alignSelf: "flex-start" }}>
+            <article className="card reveal" style={{ background: "var(--navy)", borderColor: "transparent", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <h3 className="h3" style={{ color: "#fff" }}>Projekt besprechen</h3>
+              <p style={{ color: "rgba(255,255,255,.78)" }}>Erzählen Sie uns von Ihrer Fragestellung.</p>
+              <BtnLink to="/kontakt" className="textlink"
+                style={{ color: "#fff", marginTop: 16, alignSelf: "flex-start" }}>
                 Kontakt aufnehmen
               </BtnLink>
             </article>
@@ -144,9 +121,8 @@ export default function Home() {
       <section className="section" id="departments">
         <div className="container">
           <SectionHead
-            eyebrow="Unsere Ressorts"
-            titel="Spezialisiert, strukturiert, interdisziplinär"
-            lead={`${ZAHLWORT[anzahl] || anzahl} Fachbereiche greifen ineinander – für eine professionelle Arbeitsweise auf jedem Projekt.`}
+            titel="Unsere Ressorts"
+            lead="Die Vereinsarbeit ist in Ressorts aufgeteilt. Jedes Ressort verantwortet einen klar umrissenen Bereich."
           />
           <div className="grid grid-3" data-stagger="80">
             {ressortItems.map((r, i) => {
@@ -160,20 +136,47 @@ export default function Home() {
               );
             })}
           </div>
-          <div style={{ marginTop: 40 }} className="reveal">
-            <BtnLink to="/ressorts" className="btn btn--outline" withArrow>Alle Ressorts im Detail</BtnLink>
+          <div style={{ marginTop: 36 }} className="reveal">
+            <BtnLink to="/ressorts" className="btn btn--outline" withArrow>Alle Ressorts</BtnLink>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== NETZWERK ===================== */}
+      <section className="section bg-paper-2" id="netzwerk">
+        <div className="container">
+          <div className="split">
+            <div className="split__body reveal">
+              <p className="eyebrow">Netzwerk</p>
+              <h2 className="h2" style={{ marginTop: 10 }}>Mitglied im JCNetwork e.V.</h2>
+              <p className="lead">
+                {MARKE} ist Mitglied im JCNetwork, einem bundesweiten Dachverband studentischer
+                Unternehmensberatungen in Deutschland.
+              </p>
+              <p style={{ color: "var(--muted)" }}>
+                Über den Verband tauschen wir uns mit studentischen Beratungen aus ganz Deutschland aus,
+                bilden uns gemeinsam weiter und knüpfen Kontakte zu Unternehmen.
+              </p>
+              <p>
+                <a className="textlink" href="https://www.jcnetwork.de" target="_blank" rel="noopener noreferrer">
+                  Mehr zum JCNetwork
+                </a>
+              </p>
+            </div>
+            <div className="split__media js-parallax reveal" style={{ "--d": "120ms" }}>
+              <img src={s.netzwerk_bild} alt={s.netzwerk_alt} loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* ===================== GALERIE (CMS) ===================== */}
       {galerieItems.length > 0 && (
-        <section className="section bg-paper-2" id="galerie">
+        <section className="section" id="galerie">
           <div className="container">
             <SectionHead
-              eyebrow="Galerie"
-              titel="Workshops, Events und Projektarbeit"
-              lead="Einblicke in unsere Schulungstage, Workshops und die Zusammenarbeit mit Praxispartnern."
+              titel="Einblicke"
+              lead="Schulungstage, Workshops und Projektarbeit mit unseren Partnern."
             />
             <div className="grid grid-3" id="galerie-grid" data-stagger="80">
               {galerieItems.map((g) => (
@@ -189,60 +192,22 @@ export default function Home() {
         </section>
       )}
 
-      {/* ===================== KOOPERATIONEN ===================== */}
-      <section className="section bg-paper-2">
-        <div className="container">
-          <SectionHead eyebrow="Bisherige Kooperationen" titel="Zusammenarbeit mit Wirkung" />
-          <div className="chips" data-stagger="60">
-            {KOOPERATIONEN.map((c) => <div className="chip reveal" key={c}>{c}</div>)}
-          </div>
-        </div>
-      </section>
-
       {/* ===================== KONTAKT ===================== */}
-      <section className="section" id="contact">
+      <section className="section bg-navy">
         <div className="container">
-          <div className="contact-grid">
-            <div className="reveal">
-              <p className="eyebrow">Kontakt</p>
-              <h2 className="h2" style={{ marginTop: 14 }}>Kontaktieren Sie uns</h2>
-              <p className="lead" style={{ marginTop: 18 }}>
-                Kreativ. Teamspirit. Talentschmiede. So beschreiben uns unsere Mitglieder kurz und knapp.
-                Gute Ideen beginnen mit einem Gespräch.
+          <div className="split reveal">
+            <div>
+              <h2 className="h2" style={{ color: "#fff" }}>Sprechen Sie uns an</h2>
+              <p className="lead" style={{ color: "rgba(255,255,255,.82)", marginTop: 16 }}>
+                Ob Projektanfrage, Kooperation oder Interesse an einer Mitgliedschaft – schreiben Sie uns
+                an <a href={`mailto:${einstellungen.email}`} style={{ color: "#fff", textDecoration: "underline", textUnderlineOffset: 3 }}>{einstellungen.email}</a> oder
+                nutzen Sie das Kontaktformular.
               </p>
-              <div className="info-card">
-                <div className="info-row">
-                  <MapPin />
-                  <span><b>Adresse</b>{einstellungen.adresse}</span>
-                </div>
-                <div className="info-row">
-                  <Mail />
-                  <span><b>E-Mail</b>{einstellungen.email}</span>
-                </div>
-                <div className="info-row">
-                  <Clock />
-                  <span><b>Öffnungszeiten</b>{einstellungen.oeffnungszeiten}</span>
-                </div>
-              </div>
             </div>
-
-            <form className="form reveal" style={{ "--d": "120ms" }} action={`mailto:${einstellungen.email}`} method="POST" encType="text/plain">
-              <div className="field">
-                <label htmlFor="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Ihr Name" required />
-              </div>
-              <div className="field">
-                <label htmlFor="email">E-Mail</label>
-                <input id="email" name="email" type="email" placeholder="ihre@email.de" required />
-              </div>
-              <div className="field">
-                <label htmlFor="message">Nachricht</label>
-                <textarea id="message" name="message" placeholder="Ihre Nachricht" required />
-              </div>
-              <button type="submit" className="btn btn--primary" style={{ width: "100%", justifyContent: "center" }}>
-                Nachricht senden
-              </button>
-            </form>
+            <div className="btn-row" style={{ justifyContent: "flex-end" }}>
+              <BtnLink to="/kontakt?anliegen=projekt" className="btn btn--light" withArrow>Projekt anfragen</BtnLink>
+              <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
+            </div>
           </div>
         </div>
       </section>

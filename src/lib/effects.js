@@ -1,8 +1,8 @@
 /* ============================================================
    Scroll- und Reveal-Effekte – Portierung des früheren
    assets/app.js auf React-Hooks. Die CSS-Klassen (.reveal, .in,
-   .is-scrolled, .progress) bleiben unverändert, damit styles.css
-   ohne Anpassung weiterläuft.
+   .is-scrolled) bleiben unverändert, damit styles.css ohne
+   Anpassung weiterläuft.
    ============================================================ */
 import { useEffect, useRef, useState } from "react";
 
@@ -10,27 +10,19 @@ function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-/* Scroll-Fortschritt, Nav-Zustand, Parallax und Hero-Ausblendung.
+/* Nav-Zustand und dezenter Parallax der Bilder.
    `routeKey` sorgt dafür, dass die Elemente nach jedem Seitenwechsel
    neu eingesammelt werden. */
 export function useScrollEffects(routeKey) {
   useEffect(() => {
     const reduce = prefersReducedMotion();
-    const progress = document.querySelector(".progress");
     const nav = document.querySelector(".nav");
     const parallaxImgs = Array.from(
       document.querySelectorAll(".hero__media img, .cta-band__media img, .js-parallax img")
     );
-    const heroContent = document.querySelector(".hero__content");
     let ticking = false;
 
     function frame() {
-      if (progress) {
-        const h = document.documentElement;
-        const max = h.scrollHeight - h.clientHeight;
-        progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
-      }
-
       if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 12);
 
       if (!reduce) {
@@ -42,17 +34,7 @@ export function useScrollEffects(routeKey) {
           if (r.bottom < -120 || r.top > vh + 120) continue;
           let p = (vh - r.top) / (vh + r.height);
           p = p < 0 ? 0 : p > 1 ? 1 : p;
-          img.style.transform = "translate3d(0," + ((0.5 - p) * 16).toFixed(2) + "%,0)";
-        }
-
-        if (heroContent) {
-          const y = window.scrollY;
-          const vhh = window.innerHeight;
-          if (y <= vhh) {
-            const o = 1 - y / (vhh * 0.72);
-            heroContent.style.opacity = (o < 0 ? 0 : o).toFixed(3);
-            heroContent.style.transform = "translate3d(0," + (y * 0.22).toFixed(1) + "px,0)";
-          }
+          img.style.transform = "translate3d(0," + ((0.5 - p) * 10).toFixed(2) + "%,0)";
         }
       }
 

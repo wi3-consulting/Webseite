@@ -1,4 +1,4 @@
-# wi3 – Website verstehen: Die komplette Guideline
+# wi3 consulting – Website verstehen: Die komplette Guideline
 
 Diese Anleitung erklärt dir, **wie die Website aufgebaut ist, wie die Teile
 zusammenspielen und wie du sie pflegst** – Schritt für Schritt und ohne
@@ -50,7 +50,8 @@ Webseite/
 │  ├─ App.jsx            ← Routen: welche Adresse zeigt welche Seite
 │  ├─ styles.css         ← das komplette Design (Farben, Schrift, Abstände)
 │  ├─ pages/
-│  │  ├─ Home.jsx        ← Startseite (Hero, Zahlen, Werte, Ressorts, Galerie, Kontakt)
+│  │  ├─ Home.jsx        ← Startseite (Hero, Zahlen, Werte, Ressorts, Galerie)
+│  │  ├─ Kontakt.jsx     ← Kontaktformular; ?anliegen=projekt / bewerbung wählt das Anliegen vor
 │  │  ├─ Unternehmen.jsx ← „Für Unternehmen" (Leistungen, Ablauf)
 │  │  ├─ Studierende.jsx ← „Für Studierende" (Vorteile)
 │  │  ├─ Ressorts.jsx    ← „Ressorts"
@@ -100,10 +101,15 @@ Stellschrauben. Änderst du sie dort einmal, ändert sich die ganze Website.
   --navy:   #032A5B;   /* Hauptfarbe (Blau) */
   --accent: #b8924c;   /* Akzentfarbe (Gold) */
   --paper:  #ffffff;   /* Hintergrund */
-  --font-display: "Fraunces", serif;  /* Überschriften */
+  --font-display: "Inter", sans-serif; /* Überschriften */
   --font-sans:    "Inter", sans-serif; /* Fließtext */
 }
 ```
+
+> **Schreibweise der Marke:** immer klein – „wi3 consulting“. In den Seiten
+> kommt der Name aus `MARKE` in `src/lib/meta.js`, im CMS aus dem Feld
+> „Name der Organisation“. Für Google steht er zusätzlich in `index.html`
+> (Titel, Beschreibung, strukturierte Daten).
 
 - Willst du z. B. ein anderes Blau? Nur `--navy` ändern – fertig, überall.
 - Die restlichen Regeln darunter sind **Bausteine** (Buttons, Karten, Hero,

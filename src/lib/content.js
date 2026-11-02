@@ -26,4 +26,4 @@ export const NAV_LINKS = [
   { to: "/team", label: "Team" },
 ];
 
-export const KONTAKT_LINK = "/#contact";
+export const KONTAKT_LINK = "/kontakt";

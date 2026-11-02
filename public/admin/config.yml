@@ -45,6 +45,8 @@ collections:
               - { label: "Bildausschnitt Kopfbild", name: "hero_ausschnitt", widget: "string", required: false, default: "center center", hint: "Auf breiten Bildschirmen wird oben und unten abgeschnitten. 'center top' zeigt mehr vom oberen Rand, 'center 25%' liegt dazwischen." }
               - { label: "Bild im Werte-Abschnitt", name: "werte_bild", widget: "image" }
               - { label: "Bildbeschreibung Werte", name: "werte_alt", widget: "string", required: false }
+              - { label: "Bild im Abschnitt JCNetwork", name: "netzwerk_bild", widget: "image" }
+              - { label: "Bildbeschreibung JCNetwork", name: "netzwerk_alt", widget: "string", required: false }
 
           - label: "Für Unternehmen"
             name: "unternehmen"
@@ -64,6 +66,8 @@ collections:
               - { label: "Kopfbild", name: "hero_bild", widget: "image" }
               - { label: "Bildbeschreibung Kopfbild", name: "hero_alt", widget: "string", required: false }
               - { label: "Bildausschnitt Kopfbild", name: "hero_ausschnitt", widget: "string", required: false, default: "center center" }
+              - { label: "Bild im Abschnitt JCNetwork Days", name: "jcn_bild", widget: "image" }
+              - { label: "Bildbeschreibung JCNetwork Days", name: "jcn_alt", widget: "string", required: false }
               - { label: "Bild im Aufruf-Banner", name: "cta_bild", widget: "image" }
               - { label: "Bildbeschreibung Banner", name: "cta_alt", widget: "string", required: false }
               - { label: "Bildausschnitt Banner", name: "cta_ausschnitt", widget: "string", required: false, default: "center center" }

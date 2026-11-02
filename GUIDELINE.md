@@ -50,7 +50,8 @@ Webseite/
 │  ├─ App.jsx            ← Routen: welche Adresse zeigt welche Seite
 │  ├─ styles.css         ← das komplette Design (Farben, Schrift, Abstände)
 │  ├─ pages/
-│  │  ├─ Home.jsx        ← Startseite (Hero, Zahlen, Werte, Ressorts, Galerie, Kontakt)
+│  │  ├─ Home.jsx        ← Startseite (Hero, Zahlen, Werte, Ressorts, Galerie)
+│  │  ├─ Kontakt.jsx     ← Kontaktformular; ?anliegen=projekt / bewerbung wählt das Anliegen vor
 │  │  ├─ Unternehmen.jsx ← „Für Unternehmen" (Leistungen, Ablauf)
 │  │  ├─ Studierende.jsx ← „Für Studierende" (Vorteile)
 │  │  ├─ Ressorts.jsx    ← „Ressorts"

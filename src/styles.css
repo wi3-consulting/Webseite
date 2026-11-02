@@ -147,12 +147,7 @@ p{ margin:0; }
 .nav__links a:hover, .nav__links a[aria-current="page"]{ color:var(--navy); }
 .nav__links a[aria-current="page"]::after{ transform:scaleX(1); }
 .nav__cta{ display:flex; align-items:center; justify-content:flex-end; gap:14px; }
-/* Der Button heißt je nach Seite anders ("Kontakt aufnehmen" / "Projekt
-   anfragen" / "Bewerben") und war dadurch unterschiedlich breit – das
-   hat bei jedem Seitenwechsel die Navigationslinks mitgezogen. Die feste
-   Mindestbreite entspricht der längsten Beschriftung, damit die Leiste steht.
-   Längere Beschriftungen lassen den Button weiterhin mitwachsen. */
-.nav__cta .btn{ min-width:11.5rem; justify-content:center; padding:.7rem 1.2rem; font-size:.9rem; }
+.nav__cta .btn{ padding:.7rem 1.2rem; font-size:.9rem; }
 .nav__burger{ display:none; background:none; border:0; padding:8px; color:var(--navy); }
 
 /* Mobile menu */
@@ -327,11 +322,12 @@ p{ margin:0; }
 .info-row svg{ width:20px; height:20px; color:var(--navy); flex:none; margin-top:3px; }
 .info-row b{ color:var(--ink); display:block; font-size:.85rem; font-weight:600; }
 .info-row span{ color:var(--muted); }
+.info-row a{ color:var(--navy); text-decoration:underline; text-underline-offset:3px; }
 .form{ background:var(--paper-2); border-radius:var(--radius-lg); padding:32px; }
 .field{ margin-bottom:18px; }
 .field label{ display:block; font-size:.88rem; font-weight:600; color:var(--ink); margin-bottom:6px; }
-.field input, .field textarea{ width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius); font:inherit; font-size:1rem; color:var(--ink); background:var(--paper); transition:border-color .2s var(--ease), box-shadow .2s var(--ease); }
-.field input:focus, .field textarea:focus{ outline:none; border-color:var(--navy); box-shadow:0 0 0 3px var(--navy-soft); }
+.field input, .field textarea, .field select{ width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius); font:inherit; font-size:1rem; color:var(--ink); background:var(--paper); transition:border-color .2s var(--ease), box-shadow .2s var(--ease); }
+.field input:focus, .field textarea:focus, .field select:focus{ outline:none; border-color:var(--navy); box-shadow:0 0 0 3px var(--navy-soft); }
 .field textarea{ resize:vertical; min-height:140px; }
 
 /* ============================================================

@@ -22,7 +22,7 @@ export default function Ressorts() {
         lead="Der Verein ist in Ressorts gegliedert. Jedes verantwortet einen eigenen Bereich – gemeinsam sorgen sie für eine strukturierte Arbeitsweise."
       >
         <BtnLink to="/ressorts#departments" className="btn btn--light" withArrow>Zur Übersicht</BtnLink>
-        <BtnLink to="/#contact" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
+        <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
       </Hero>
 
       <section className="section" id="departments">

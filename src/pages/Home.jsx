@@ -1,13 +1,13 @@
 import { seiten, galerieItems, ressortItems, einstellungen } from "../lib/content.js";
 import { BtnLink, Hero, SectionHead, Stat } from "../components/Blocks.jsx";
-import { Clock, Mail, MapPin, RESSORT_ICONS } from "../components/Icons.jsx";
+import { RESSORT_ICONS } from "../components/Icons.jsx";
 import { MARKE, usePageMeta } from "../lib/meta.js";
 
 const PILLARS = [
   { titel: "Wer wir sind", text: "wi3 consulting ist ein eingetragener Verein von Studierenden aus Wiesbaden und Umgebung. Wir bearbeiten Beratungsprojekte für Unternehmen und verbinden dabei Studium und Praxis." },
   { titel: "Für Unternehmen", text: "Analysen, Konzepte und Workshops zu fairen Konditionen – umgesetzt von Teams mit aktuellem Fachwissen aus dem Studium.", link: { to: "/unternehmen", label: "Zu den Leistungen" } },
   { titel: "Für Studierende", text: "Projekterfahrung mit echten Kunden, Verantwortung im Verein und ein Netzwerk, das über das Studium hinaus trägt.", link: { to: "/studierende", label: "Mitglied werden" } },
-  { titel: "Kontakt", text: "Sie haben eine konkrete Fragestellung oder möchten uns kennenlernen? Wir melden uns zeitnah zurück.", link: { to: "/#contact", label: "Kontakt aufnehmen" } },
+  { titel: "Kontakt", text: "Sie haben eine konkrete Fragestellung oder möchten uns kennenlernen? Wir melden uns zeitnah zurück.", link: { to: "/kontakt", label: "Kontakt aufnehmen" } },
 ];
 
 const STATS = [
@@ -43,7 +43,7 @@ export default function Home() {
         lead="Wir unterstützen Unternehmen aus der Region bei Fragen zu Digitalisierung, Prozessen, Markt und Strategie – mit engagierten Studierenden und aktuellem Fachwissen."
       >
         <BtnLink to="/unternehmen" className="btn btn--light" withArrow>Leistungen ansehen</BtnLink>
-        <BtnLink to="/#contact" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
+        <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
       </Hero>
 
       {/* ===================== POSITIONIERUNG ===================== */}
@@ -108,7 +108,7 @@ export default function Home() {
             <article className="card reveal" style={{ background: "var(--navy)", borderColor: "transparent", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <h3 className="h3" style={{ color: "#fff" }}>Projekt besprechen</h3>
               <p style={{ color: "rgba(255,255,255,.78)" }}>Erzählen Sie uns von Ihrer Fragestellung.</p>
-              <BtnLink to="/#contact" className="textlink"
+              <BtnLink to="/kontakt" className="textlink"
                 style={{ color: "#fff", marginTop: 16, alignSelf: "flex-start" }}>
                 Kontakt aufnehmen
               </BtnLink>
@@ -142,9 +142,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===================== NETZWERK ===================== */}
+      <section className="section bg-paper-2" id="netzwerk">
+        <div className="container">
+          <div className="split">
+            <div className="split__body reveal">
+              <p className="eyebrow">Netzwerk</p>
+              <h2 className="h2" style={{ marginTop: 10 }}>Mitglied im JCNetwork e.V.</h2>
+              <p className="lead">
+                {MARKE} ist Mitglied im JCNetwork, einem bundesweiten Dachverband studentischer
+                Unternehmensberatungen in Deutschland.
+              </p>
+              <p style={{ color: "var(--muted)" }}>
+                Über den Verband tauschen wir uns mit studentischen Beratungen aus ganz Deutschland aus,
+                bilden uns gemeinsam weiter und knüpfen Kontakte zu Unternehmen.
+              </p>
+              <p>
+                <a className="textlink" href="https://www.jcnetwork.de" target="_blank" rel="noopener noreferrer">
+                  Mehr zum JCNetwork
+                </a>
+              </p>
+            </div>
+            <div className="split__media js-parallax reveal" style={{ "--d": "120ms" }}>
+              <img src={s.netzwerk_bild} alt={s.netzwerk_alt} loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===================== GALERIE (CMS) ===================== */}
       {galerieItems.length > 0 && (
-        <section className="section bg-paper-2" id="galerie">
+        <section className="section" id="galerie">
           <div className="container">
             <SectionHead
               titel="Einblicke"
@@ -165,47 +193,21 @@ export default function Home() {
       )}
 
       {/* ===================== KONTAKT ===================== */}
-      <section className="section" id="contact">
+      <section className="section bg-navy">
         <div className="container">
-          <div className="contact-grid">
-            <div className="reveal">
-              <h2 className="h2">Kontakt</h2>
-              <p className="lead" style={{ marginTop: 16 }}>
-                Ob Projektanfrage, Kooperation oder Interesse an einer Mitgliedschaft – schreiben Sie uns.
+          <div className="split reveal">
+            <div>
+              <h2 className="h2" style={{ color: "#fff" }}>Sprechen Sie uns an</h2>
+              <p className="lead" style={{ color: "rgba(255,255,255,.82)", marginTop: 16 }}>
+                Ob Projektanfrage, Kooperation oder Interesse an einer Mitgliedschaft – schreiben Sie uns
+                an <a href={`mailto:${einstellungen.email}`} style={{ color: "#fff", textDecoration: "underline", textUnderlineOffset: 3 }}>{einstellungen.email}</a> oder
+                nutzen Sie das Kontaktformular.
               </p>
-              <div className="info-card">
-                <div className="info-row">
-                  <MapPin />
-                  <span><b>Adresse</b>{einstellungen.adresse}</span>
-                </div>
-                <div className="info-row">
-                  <Mail />
-                  <span><b>E-Mail</b>{einstellungen.email}</span>
-                </div>
-                <div className="info-row">
-                  <Clock />
-                  <span><b>Erreichbarkeit</b>{einstellungen.oeffnungszeiten}</span>
-                </div>
-              </div>
             </div>
-
-            <form className="form reveal" style={{ "--d": "120ms" }} action={`mailto:${einstellungen.email}`} method="POST" encType="text/plain">
-              <div className="field">
-                <label htmlFor="name">Name</label>
-                <input id="name" name="name" type="text" required />
-              </div>
-              <div className="field">
-                <label htmlFor="email">E-Mail</label>
-                <input id="email" name="email" type="email" required />
-              </div>
-              <div className="field">
-                <label htmlFor="message">Nachricht</label>
-                <textarea id="message" name="message" required />
-              </div>
-              <button type="submit" className="btn btn--primary" style={{ width: "100%", justifyContent: "center" }}>
-                Nachricht senden
-              </button>
-            </form>
+            <div className="btn-row" style={{ justifyContent: "flex-end" }}>
+              <BtnLink to="/kontakt?anliegen=projekt" className="btn btn--light" withArrow>Projekt anfragen</BtnLink>
+              <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
+            </div>
           </div>
         </div>
       </section>

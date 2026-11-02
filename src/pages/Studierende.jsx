@@ -5,7 +5,7 @@ import { MARKE, usePageMeta } from "../lib/meta.js";
 
 const VORTEILE = [
   { icon: FileSimple, titel: "Echte Projekte", text: "Du arbeitest an Beratungsprojekten für Unternehmen aus der Region." },
-  { icon: Users, titel: "Netzwerk", text: "Kontakte zu Unternehmen, Alumni und anderen engagierten Studierenden." },
+  { icon: Users, titel: "Netzwerk", text: "Kontakte zu Unternehmen, Alumni und anderen studentischen Beratungen – auch bundesweit über das JCNetwork." },
   { icon: Medal, titel: "Persönliche Entwicklung", text: "Präsentieren, Moderieren, Führen – Fähigkeiten, die im Hörsaal zu kurz kommen." },
   { icon: BookOpen, titel: "Workshops & Schulungen", text: "Lean & Earn Schulungstage, interne Workshops und praxisnahe Weiterbildungen." },
   { icon: ArrowUpCircle, titel: "Berufserfahrung", text: "Beratungserfahrung schon während des Studiums – ein klarer Pluspunkt im Lebenslauf." },
@@ -31,7 +31,7 @@ export default function Studierende() {
         lead="Bei uns bearbeitest du echte Projekte, übernimmst Verantwortung im Verein und lernst Unternehmen aus der Region kennen."
       >
         <BtnLink to="/studierende#vorteile" className="btn btn--light" withArrow>Was dich erwartet</BtnLink>
-        <BtnLink to="/#contact" className="btn btn--ghost">Bewerben</BtnLink>
+        <BtnLink to="/kontakt?anliegen=bewerbung" className="btn btn--ghost">Bewerben</BtnLink>
       </Hero>
 
       {/* ===================== WAS DICH ERWARTET ===================== */}
@@ -87,8 +87,33 @@ export default function Studierende() {
         </div>
       </section>
 
+      {/* ===================== JCNETWORK DAYS ===================== */}
+      <section className="section" id="jcnetwork-days">
+        <div className="container">
+          <div className="split split--reverse">
+            <div className="split__media js-parallax reveal">
+              <img src={s.jcn_bild} alt={s.jcn_alt} loading="lazy" />
+            </div>
+            <div className="split__body reveal" style={{ "--d": "120ms" }}>
+              <p className="eyebrow">Unterwegs mit dem Team</p>
+              <h2 className="h2" style={{ marginTop: 10 }}>JCNetwork Days</h2>
+              <p className="lead">
+                Zweimal im Jahr treffen sich die Mitglieder des JCNetwork, des Dachverbands studentischer
+                Unternehmensberatungen, zu den JCNetwork Days – einem mehrtägigen Kongress in wechselnden
+                Städten.
+              </p>
+              <p style={{ color: "var(--muted)" }}>
+                Auf dem Programm stehen Workshops und Schulungen, Vorträge von Unternehmen und viel Austausch
+                mit Studierenden anderer Beratungen. Wir fahren als Team mit – für dich eine gute Gelegenheit,
+                Kontakte zu Unternehmen zu knüpfen und das Netzwerk kennenzulernen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===================== RESSORTS ÜBERBLICK ===================== */}
-      <section className="section">
+      <section className="section bg-paper-2">
         <div className="container">
           <SectionHead
             titel="Ressorts"
@@ -111,7 +136,7 @@ export default function Studierende() {
         titel="Werde Mitglied"
         text="Schreib uns kurz, wer du bist und was du studierst – wir melden uns bei dir."
         buttonLabel="Bewerben"
-        buttonTo="/#contact"
+        buttonTo="/kontakt?anliegen=bewerbung"
       />
     </>
   );

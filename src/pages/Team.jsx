@@ -22,7 +22,7 @@ export default function Team() {
         lead={`Die Studierenden, die ${MARKE} leiten und organisieren.`}
       >
         <BtnLink to="/team#vorstand" className="btn btn--light" withArrow>Zum Vorstand</BtnLink>
-        <BtnLink to="/#contact" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
+        <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
       </Hero>
 
       {/* ===================== VORSTAND ===================== */}
@@ -80,7 +80,7 @@ export default function Team() {
         titel="Werde Teil des Teams"
         text="Wir suchen Studierende, die Lust auf Projektarbeit und Verantwortung im Verein haben."
         buttonLabel="Bewerben"
-        buttonTo="/#contact"
+        buttonTo="/kontakt?anliegen=bewerbung"
       />
     </>
   );

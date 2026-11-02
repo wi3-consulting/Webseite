@@ -45,7 +45,7 @@ export default function Unternehmen() {
         lead="Wir unterstützen Sie bei strategischen, digitalen und organisatorischen Fragestellungen – strukturiert, verlässlich und zu fairen Konditionen."
       >
         <BtnLink to="/unternehmen#leistungen" className="btn btn--light" withArrow>Unsere Leistungen</BtnLink>
-        <BtnLink to="/#contact" className="btn btn--ghost">Projekt anfragen</BtnLink>
+        <BtnLink to="/kontakt?anliegen=projekt" className="btn btn--ghost">Projekt anfragen</BtnLink>
       </Hero>
 
       {/* ===================== WARUM STUDENTISCHE BERATUNG ===================== */}
@@ -109,7 +109,7 @@ export default function Unternehmen() {
         titel="Sprechen Sie uns an"
         text={`In einem unverbindlichen Erstgespräch klären wir, wie ${MARKE} Sie unterstützen kann.`}
         buttonLabel="Projekt anfragen"
-        buttonTo="/#contact"
+        buttonTo="/kontakt?anliegen=projekt"
       />
     </>
   );

@@ -1,4 +1,4 @@
-# WI3 – Bilder verwalten mit dem CMS (Decap)
+# wi3 consulting – Bilder verwalten mit dem CMS (Decap)
 
 Die Website hat ein eingebautes Content-Management-System. Damit können auch
 Personen ohne Programmierkenntnisse **Bilder samt Beschreibung hinzufügen,
@@ -65,7 +65,7 @@ beim **Kopfbild** auf das Bild klicken → neues Bild wählen → Save → Publi
 
 ### Gut zu wissen
 - Der **Alt-Text** beschreibt das Bild für Screenreader und Suchmaschinen. Kurz
-  und sachlich, z. B. „WI3-Team bei der Projektarbeit".
+  und sachlich, z. B. „wi3-Team bei der Projektarbeit".
 - Bei Porträts steuert das Feld **Bildausschnitt** (z. B. `center top`), welcher
   Teil des Fotos sichtbar bleibt – hilfreich, wenn der Kopf angeschnitten wird.
 - Kopfbilder und Banner haben dasselbe Feld. Auf breiten Bildschirmen wird oben

@@ -1,17 +1,14 @@
 import { seiten, ressortItems } from "../lib/content.js";
 import { BtnLink, Hero, SectionHead } from "../components/Blocks.jsx";
-import { Calendar, RESSORT_ICONS } from "../components/Icons.jsx";
-import { usePageMeta } from "../lib/meta.js";
-
-const ZAHLWORT = ["Null", "Ein", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieben", "Acht", "Neun", "Zehn"];
+import { RESSORT_ICONS } from "../components/Icons.jsx";
+import { MARKE, usePageMeta } from "../lib/meta.js";
 
 export default function Ressorts() {
   usePageMeta(
-    "Ressorts – WI3 Consulting",
-    "Die Ressorts von WI3 – Consulting: Sales, Marketing, HR, Eventmanagement, IT und Controlling. Spezialisiert, strukturiert und interdisziplinär."
+    `Ressorts | ${MARKE}`,
+    `Die Ressorts von ${MARKE}: ${ressortItems.map((r) => r.titel).join(", ")}.`
   );
   const s = seiten.ressorts;
-  const anzahl = ressortItems.length;
 
   return (
     <>
@@ -20,21 +17,19 @@ export default function Ressorts() {
         bild={s.hero_bild}
         alt={s.hero_alt}
         ausschnitt={s.hero_ausschnitt}
-        eyebrow="Unsere Fachbereiche"
-        titel="Ressorts"
-        titelSoft="— spezialisiert & interdisziplinär."
-        lead="Unsere Organisation ist in spezialisierte Ressorts gegliedert, die gemeinsam eine professionelle und strukturierte Arbeitsweise ermöglichen."
+        eyebrow="Organisation"
+        titel="Unsere Ressorts"
+        lead="Der Verein ist in Ressorts gegliedert. Jedes verantwortet einen eigenen Bereich – gemeinsam sorgen sie für eine strukturierte Arbeitsweise."
       >
-        <BtnLink to="/ressorts#departments" className="btn btn--light" withArrow>Ressorts ansehen</BtnLink>
+        <BtnLink to="/ressorts#departments" className="btn btn--light" withArrow>Zur Übersicht</BtnLink>
         <BtnLink to="/#contact" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
       </Hero>
 
       <section className="section" id="departments">
         <div className="container">
           <SectionHead
-            eyebrow="Ressorts"
-            titel="Unsere Fachbereiche im Detail"
-            lead={`${ZAHLWORT[anzahl] || anzahl} Teams, ein gemeinsames Ziel: professionelle Beratung mit Wirkung.`}
+            titel="Aufgaben der Ressorts"
+            lead="Hier sehen Sie, wer wofür zuständig ist."
           />
 
           {/* Karten kommen aus content/ressorts.json – im CMS unter „Ressorts“ pflegbar. */}
@@ -64,21 +59,18 @@ export default function Ressorts() {
                       </div>
                     )}
                   </div>
-                  {r.datum && (
-                    <div className="feature-card__foot"><Calendar />{r.datum}</div>
-                  )}
                 </article>
               );
             })}
 
-            <article className="feature-card reveal ressort-cta"
-              style={{ background: "var(--navy)", borderColor: "transparent", display: "flex", flexDirection: "column", justifyContent: "center", padding: 38 }}>
-              <h3 className="h3" style={{ color: "#fff" }}>Dein Ressort ist dabei?</h3>
-              <p style={{ color: "rgba(255,255,255,.78)", marginTop: 12 }}>
-                Finde heraus, wo du am besten einsteigst – wir freuen uns auf dich.
+            <article className="feature-card reveal"
+              style={{ background: "var(--navy)", borderColor: "transparent", display: "flex", flexDirection: "column", justifyContent: "center", padding: 34 }}>
+              <h3 className="h3" style={{ color: "#fff" }}>Mitarbeit in einem Ressort</h3>
+              <p style={{ color: "rgba(255,255,255,.78)", marginTop: 10 }}>
+                Du möchtest dich engagieren? Erfahre, wie du bei uns einsteigen kannst.
               </p>
               <BtnLink to="/studierende" className="textlink"
-                style={{ color: "#fff", borderColor: "var(--accent)", marginTop: 20, alignSelf: "flex-start" }}>
+                style={{ color: "#fff", marginTop: 18, alignSelf: "flex-start" }}>
                 Für Studierende
               </BtnLink>
             </article>

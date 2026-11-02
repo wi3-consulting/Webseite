@@ -13,7 +13,7 @@ export function BtnLink({ to, className, style, children, withArrow = false }) {
   );
 }
 
-export function Hero({ page = false, bild, alt = "", ausschnitt, eyebrow, titel, titelSoft, lead, sub, children }) {
+export function Hero({ page = false, bild, alt = "", ausschnitt, eyebrow, titel, lead, sub, children }) {
   // Sobald diese Seite steht, die Kopfbilder der übrigen Seiten im
   // Leerlauf nachladen – der nächste Reiterwechsel kommt dann ohne Warten.
   useKopfbilderVorladen(bild);
@@ -33,14 +33,13 @@ export function Hero({ page = false, bild, alt = "", ausschnitt, eyebrow, titel,
       </div>
       <div className="container hero__inner">
         <div className="hero__content">
-          <p className="eyebrow eyebrow--light">{eyebrow}</p>
-          <h1 className="display">{titel}{titelSoft && <span className="soft">{titelSoft}</span>}</h1>
+          {eyebrow && <p className="eyebrow eyebrow--light">{eyebrow}</p>}
+          <h1 className="display">{titel}</h1>
           {lead && <p className="hero__lead">{lead}</p>}
           {sub && <p className="hero__sub">{sub}</p>}
           <div className="btn-row">{children}</div>
         </div>
       </div>
-      {!page && <div className="hero__scroll" aria-hidden="true">Scroll <span /></div>}
     </section>
   );
 }
@@ -48,7 +47,7 @@ export function Hero({ page = false, bild, alt = "", ausschnitt, eyebrow, titel,
 export function SectionHead({ eyebrow, titel, lead, style }) {
   return (
     <div className="section-head reveal" style={style}>
-      <p className="eyebrow">{eyebrow}</p>
+      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       <h2 className="h2">{titel}</h2>
       {lead && <p className="lead">{lead}</p>}
     </div>
@@ -81,14 +80,12 @@ export function CtaBand({ bild, alt = "", ausschnitt, titel, text, buttonLabel, 
 }
 
 /* Karte mit Icon, Überschrift und Text – Grundbaustein der Rasterabschnitte. */
-export function IconCard({ icon: Icon, titel, children, dark = false }) {
-  const cardStyle = dark ? { background: "var(--navy)", color: "#fff", borderColor: "transparent" } : undefined;
-  const iconStyle = dark ? { background: "rgba(255,255,255,.12)", color: "#fff" } : undefined;
+export function IconCard({ icon: Icon, titel, children }) {
   return (
-    <article className="card reveal" style={cardStyle}>
-      <div className="card__icon" style={iconStyle}><Icon /></div>
-      <h3 className="h3" style={dark ? { color: "#fff" } : undefined}>{titel}</h3>
-      <p style={dark ? { color: "rgba(255,255,255,.78)" } : undefined}>{children}</p>
+    <article className="card reveal">
+      <div className="card__icon"><Icon /></div>
+      <h3 className="h3">{titel}</h3>
+      <p>{children}</p>
     </article>
   );
 }

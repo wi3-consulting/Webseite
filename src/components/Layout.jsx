@@ -7,7 +7,7 @@ import { Burger, Close } from "./Icons.jsx";
 /* Beschriftung des Nav-Buttons je Seite – wie in der bisherigen Fassung. */
 const CTA_LABEL = {
   "/unternehmen": "Projekt anfragen",
-  "/studierende": "Jetzt bewerben",
+  "/studierende": "Bewerben",
 };
 
 function Nav({ onOpenMenu }) {
@@ -94,10 +94,8 @@ function Footer() {
           </div>
         </div>
       </footer>
-      <div style={{ background: "#021A38", padding: "0.9rem 1.5rem", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-        <span style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.6)" }}>
-          Hinweis: Diese Website wurde mit Unterstützung von Künstlicher Intelligenz erstellt.
-        </span>
+      <div className="footer__note">
+        Hinweis: Diese Website wurde mit Unterstützung von Künstlicher Intelligenz erstellt.
       </div>
     </>
   );
@@ -165,7 +163,6 @@ export default function Layout() {
 
   return (
     <>
-      <div className="progress" aria-hidden="true" />
       <Nav onOpenMenu={() => setMenuOpen(true)} />
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
       <ScrollManager />

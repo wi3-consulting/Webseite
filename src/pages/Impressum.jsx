@@ -1,17 +1,16 @@
 import { einstellungen } from "../lib/content.js";
-import { usePageMeta } from "../lib/meta.js";
+import { MARKE, usePageMeta } from "../lib/meta.js";
 
 export default function Impressum() {
   usePageMeta(
-    "Impressum – WI3 Consulting",
-    "Impressum von wi3 consulting e.V. – Studentische Unternehmensberatung Wiesbaden."
+    `Impressum | ${MARKE}`,
+    "Impressum von wi3 consulting e.V., Studentische Unternehmensberatung Wiesbaden."
   );
   return (
     <section className="section" style={{ paddingTop: "clamp(50px,7vw,90px)" }}>
       <div className="container" style={{ maxWidth: 840 }}>
-        <div className="section-head reveal" style={{ marginBottom: 36 }}>
-          <p className="eyebrow">Rechtliches</p>
-          <h1 className="h2" style={{ marginTop: 14 }}>Impressum</h1>
+        <div className="section-head reveal" style={{ marginBottom: 28 }}>
+          <h1 className="h2">Impressum</h1>
         </div>
 
         <div className="prose-block reveal">

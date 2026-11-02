@@ -86,33 +86,26 @@ export default function Home() {
       {/* ===================== WERTE ===================== */}
       <section className="section bg-paper-2" id="values">
         <div className="container">
-          <div className="split split--reverse" style={{ marginBottom: "clamp(36px,5vw,56px)" }}>
+          <div className="split split--reverse split--top">
             <div className="split__media js-parallax reveal">
               <img src={s.werte_bild} alt={s.werte_alt} loading="lazy" />
             </div>
-            <div className="split__body reveal">
-              <h2 className="h2">Unsere Werte</h2>
-              <p className="lead">
-                Diese Grundsätze gelten in jedem Projekt und in der Zusammenarbeit innerhalb des Vereins.
-              </p>
+            <div className="split__body">
+              <div className="reveal">
+                <h2 className="h2">Unsere Werte</h2>
+                <p className="lead">
+                  Diese Grundsätze gelten in jedem Projekt und in der Zusammenarbeit innerhalb des Vereins.
+                </p>
+              </div>
+              <dl className="values" data-stagger="70">
+                {WERTE.map((w) => (
+                  <div className="values__row reveal" key={w.titel}>
+                    <dt>{w.titel}</dt>
+                    <dd>{w.text}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-          </div>
-
-          <div className="grid grid-3" data-stagger="90">
-            {WERTE.map((w) => (
-              <article className="card card--rule reveal" key={w.titel}>
-                <h3 className="h3">{w.titel}</h3>
-                <p>{w.text}</p>
-              </article>
-            ))}
-            <article className="card reveal" style={{ background: "var(--navy)", borderColor: "transparent", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <h3 className="h3" style={{ color: "#fff" }}>Projekt besprechen</h3>
-              <p style={{ color: "rgba(255,255,255,.78)" }}>Erzählen Sie uns von Ihrer Fragestellung.</p>
-              <BtnLink to="/kontakt" className="textlink"
-                style={{ color: "#fff", marginTop: 16, alignSelf: "flex-start" }}>
-                Kontakt aufnehmen
-              </BtnLink>
-            </article>
           </div>
         </div>
       </section>

@@ -207,7 +207,6 @@ p{ margin:0; }
 .card h3{ color:var(--navy); }
 .card h3:not(:first-child){ margin-top:14px; }
 .card p{ margin-top:10px; color:var(--muted); font-size:1rem; }
-.card--rule{ border-top:3px solid var(--navy); }
 .card__icon{
   width:44px; height:44px; border-radius:var(--radius); display:grid; place-items:center;
   background:var(--navy-soft); color:var(--navy);
@@ -240,6 +239,13 @@ p{ margin:0; }
 .js-parallax img{ position:absolute; left:0; top:-11%; width:100%; height:122%; object-fit:cover; aspect-ratio:auto; will-change:transform; }
 .split__body p + p{ margin-top:16px; }
 .split__body .lead{ margin-top:16px; }
+.split--top{ align-items:start; }
+
+/* Werte als Liste: Begriff links, Erklärung rechts, feine Trennlinien */
+.values{ margin:32px 0 0; border-top:1px solid var(--line); }
+.values__row{ display:grid; grid-template-columns:11rem 1fr; gap:20px; padding:18px 0; border-bottom:1px solid var(--line); }
+.values dt{ font-weight:600; color:var(--navy); }
+.values dd{ margin:0; color:var(--muted); font-size:1rem; }
 
 /* ============================================================
    Stats
@@ -396,6 +402,7 @@ p{ margin:0; }
 }
 @media (max-width: 560px){
   body{ font-size:16px; }
+  .values__row{ grid-template-columns:1fr; gap:4px; }
   .grid-2, .grid-3, .grid-4{ grid-template-columns:1fr; }
   .stats{ grid-template-columns:1fr 1fr; }
   .process{ grid-template-columns:1fr; }

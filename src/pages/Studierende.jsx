@@ -50,7 +50,7 @@ export default function Studierende() {
               </p>
             </div>
             <div className="reveal" style={{ "--d": "120ms" }}>
-              <div className="card card--rule" style={{ padding: 34 }}>
+              <div className="card" style={{ padding: 34 }}>
                 <h3 className="h3">Theorie trifft Praxis</h3>
                 <p>
                   Was du im Studium lernst, wendest du bei uns direkt an – mit echten Kunden, Deadlines

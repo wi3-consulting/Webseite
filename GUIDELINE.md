@@ -1,4 +1,4 @@
-# WI3 – Website verstehen: Die komplette Guideline
+# wi3 – Website verstehen: Die komplette Guideline
 
 Diese Anleitung erklärt dir, **wie die Website aufgebaut ist, wie die Teile
 zusammenspielen und wie du sie pflegst** – Schritt für Schritt und ohne

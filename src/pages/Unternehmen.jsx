@@ -28,8 +28,8 @@ const ABLAUF = [
 
 export default function Unternehmen() {
   usePageMeta(
-    "Für Unternehmen – WI3 Consulting",
-    "WI3 – Consulting für Unternehmen: Digitalisierung, Prozessoptimierung, Marktanalyse, Strategie, Workshops und Konzeptentwicklung – kosteneffizient und auf Augenhöhe."
+    "Für Unternehmen – wi3 consulting",
+    "wi3 consulting für Unternehmen: Digitalisierung, Prozessoptimierung, Marktanalyse, Strategie, Workshops und Konzeptentwicklung – kosteneffizient und auf Augenhöhe."
   );
   const s = seiten.unternehmen;
 
@@ -49,16 +49,16 @@ export default function Unternehmen() {
         <BtnLink to="/#contact" className="btn btn--ghost">Projekt anfragen</BtnLink>
       </Hero>
 
-      {/* ===================== WARUM WI3 ===================== */}
+      {/* ===================== WARUM wi3 ===================== */}
       <section className="section">
         <div className="container">
           <div className="split">
             <div className="split__body reveal">
-              <p className="eyebrow">Warum WI3</p>
+              <p className="eyebrow">Warum wi3</p>
               <h2 className="h2" style={{ marginTop: 14 }}>Ihr Vorteil durch studentische Beratung</h2>
               <p className="lead" style={{ marginTop: 18 }}>
                 Sie stehen vor einer strategischen, digitalen oder organisatorischen Herausforderung?
-                WI3 – Consulting bietet Ihnen frische Perspektiven, fundiertes Fachwissen und praxisnahe
+                wi3 consulting bietet Ihnen frische Perspektiven, fundiertes Fachwissen und praxisnahe
                 Lösungen – kosteneffizient und auf Augenhöhe.
               </p>
               <p style={{ marginTop: 16, color: "var(--muted)" }}>
@@ -116,7 +116,7 @@ export default function Unternehmen() {
         alt={s.cta_alt}
         ausschnitt={s.cta_ausschnitt}
         titel="Bereit für frische Perspektiven?"
-        text="Lassen Sie uns gemeinsam herausfinden, wie WI3 – Consulting Ihr Unternehmen unterstützen kann. Unverbindlich und unkompliziert."
+        text="Lassen Sie uns gemeinsam herausfinden, wie wi3 consulting Ihr Unternehmen unterstützen kann. Unverbindlich und unkompliziert."
         buttonLabel="Jetzt Projekt anfragen"
         buttonTo="/#contact"
       />

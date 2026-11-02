@@ -7,8 +7,8 @@ const ZAHLWORT = ["Null", "Ein", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieb
 
 export default function Ressorts() {
   usePageMeta(
-    "Ressorts – WI3 Consulting",
-    "Die Ressorts von WI3 – Consulting: Sales, Marketing, HR, Eventmanagement, IT und Controlling. Spezialisiert, strukturiert und interdisziplinär."
+    "Ressorts – wi3 consulting",
+    "Die Ressorts von wi3 consulting: Sales, Marketing, HR, Eventmanagement, IT und Controlling. Spezialisiert, strukturiert und interdisziplinär."
   );
   const s = seiten.ressorts;
   const anzahl = ressortItems.length;

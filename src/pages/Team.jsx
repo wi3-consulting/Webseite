@@ -5,8 +5,8 @@ import { usePageMeta } from "../lib/meta.js";
 
 export default function Team() {
   usePageMeta(
-    "Team – WI3 Consulting",
-    "Das Team von WI3 – Consulting: Vorstand und Ressortleitungen. Engagierte Studierende mit Leidenschaft für Beratung, Innovation und Teamwork."
+    "Team – wi3 consulting",
+    "Das Team von wi3 consulting: Vorstand und Ressortleitungen. Engagierte Studierende mit Leidenschaft für Beratung, Innovation und Teamwork."
   );
   const s = seiten.team;
 
@@ -19,7 +19,7 @@ export default function Team() {
         ausschnitt={s.hero_ausschnitt}
         eyebrow="Unser Team"
         titel="Die Menschen"
-        titelSoft="— hinter WI3."
+        titelSoft="— hinter wi3."
         lead="Engagierte Studierende mit Leidenschaft für Beratung, Innovation und Teamwork. Lerne unser Vorstandsteam und unsere Ressortleitungen kennen."
       >
         <BtnLink to="/team#vorstand" className="btn btn--light" withArrow>Team kennenlernen</BtnLink>
@@ -32,7 +32,7 @@ export default function Team() {
           <SectionHead
             eyebrow="Das Team"
             titel="Vorstand & Organisation"
-            lead="Drei Köpfe an der Spitze, die Strategie, Betrieb und Finanzen von WI3 – Consulting verantworten."
+            lead="Drei Köpfe an der Spitze, die Strategie, Betrieb und Finanzen von wi3 consulting verantworten."
           />
           {/* Inhalt aus content/team.json – im CMS unter „Team“ pflegbar. */}
           <div className="grid grid-3" id="team-grid" data-stagger="100">

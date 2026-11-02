@@ -3,7 +3,7 @@ import { usePageMeta } from "../lib/meta.js";
 
 export default function Impressum() {
   usePageMeta(
-    "Impressum – WI3 Consulting",
+    "Impressum – wi3 consulting",
     "Impressum von wi3 consulting e.V. – Studentische Unternehmensberatung Wiesbaden."
   );
   return (

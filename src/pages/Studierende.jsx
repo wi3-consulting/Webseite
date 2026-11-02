@@ -14,8 +14,8 @@ const VORTEILE = [
 
 export default function Studierende() {
   usePageMeta(
-    "Für Studierende – WI3 Consulting",
-    "WI3 – Consulting für Studierende: echte Beratungsprojekte, starkes Netzwerk, persönliche Entwicklung, Workshops und Karriereboost schon während des Studiums."
+    "Für Studierende – wi3 consulting",
+    "wi3 consulting für Studierende: echte Beratungsprojekte, starkes Netzwerk, persönliche Entwicklung, Workshops und Karriereboost schon während des Studiums."
   );
   const s = seiten.studierende;
 
@@ -43,7 +43,7 @@ export default function Studierende() {
               <p className="eyebrow">Deine Chance</p>
               <h2 className="h2" style={{ marginTop: 14 }}>Mehr als nur ein Verein</h2>
               <p className="lead" style={{ marginTop: 18 }}>
-                WI3 – Consulting gibt dir die Möglichkeit, schon während des Studiums echte Beratungsprojekte
+                wi3 consulting gibt dir die Möglichkeit, schon während des Studiums echte Beratungsprojekte
                 zu bearbeiten, Verantwortung zu übernehmen und dich persönlich sowie fachlich weiterzuentwickeln.
               </p>
               <p style={{ marginTop: 16, color: "var(--muted)" }}>
@@ -80,7 +80,7 @@ export default function Studierende() {
         <div className="container">
           <SectionHead
             eyebrow="Vorteile"
-            titel="Was du bei WI3 bekommst"
+            titel="Was du bei wi3 bekommst"
             lead="Sechs gute Gründe, Teil unserer studentischen Denkfabrik zu werden."
           />
           <div className="grid grid-3" data-stagger="80">
@@ -114,7 +114,7 @@ export default function Studierende() {
         alt={s.cta_alt}
         ausschnitt={s.cta_ausschnitt}
         titel="Nicht zuschauen — anpacken!"
-        text="Gute Ideen beginnen mit einem Gespräch. Werde Teil von WI3 – Consulting und gestalte die Zukunft aktiv mit."
+        text="Gute Ideen beginnen mit einem Gespräch. Werde Teil von wi3 consulting und gestalte die Zukunft aktiv mit."
         buttonLabel="Jetzt bewerben"
         buttonTo="/#contact"
       />

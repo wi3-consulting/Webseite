@@ -4,7 +4,7 @@ import { Clock, Mail, MapPin, RESSORT_ICONS } from "../components/Icons.jsx";
 import { usePageMeta } from "../lib/meta.js";
 
 const PILLARS = [
-  { num: "01", titel: "WI3 – Consulting", text: "Wiesbadens studentische Denkfabrik: frische Perspektiven, top Fachwissen und unbändiger Tatendrang. Hier wird Theorie zur Praxis und Zukunft gestaltet." },
+  { num: "01", titel: "wi3 consulting", text: "Wiesbadens studentische Denkfabrik: frische Perspektiven, top Fachwissen und unbändiger Tatendrang. Hier wird Theorie zur Praxis und Zukunft gestaltet." },
   { num: "02", titel: "Für Unternehmen", text: "Smarte Lösungen – günstig, schnell und innovativ. Arbeiten Sie mit Wiesbadens Zukunftsgestaltern zusammen.", link: { to: "/unternehmen", label: "Leistungen ansehen" } },
   { num: "03", titel: "Für Studierende", text: "Gestalte die Zukunft mit echten Projekten, einem starken Team und sichtbarem Impact.", link: { to: "/studierende", label: "Deine Vorteile" } },
   { num: "04", titel: "Kontakt", text: "Gute Ideen beginnen mit einem Gespräch. Nicht zuschauen, sondern anpacken – kontaktiere uns unverbindlich.", link: { to: "/#contact", label: "Gespräch starten" } },
@@ -33,8 +33,8 @@ const ZAHLWORT = ["Null", "Ein", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieb
 
 export default function Home() {
   usePageMeta(
-    "WI3 – Consulting | Studentische Unternehmensberatung Wiesbaden",
-    "WI3 – Consulting: Wiesbadens studentische Unternehmensberatung. Frische Perspektiven, fundiertes Fachwissen und praxisnahe Lösungen für Unternehmen aus der Region."
+    "wi3 consulting | Studentische Unternehmensberatung Wiesbaden",
+    "wi3 consulting: Wiesbadens studentische Unternehmensberatung. Frische Perspektiven, fundiertes Fachwissen und praxisnahe Lösungen für Unternehmen aus der Region."
   );
   const s = seiten.start;
   const anzahl = ressortItems.length;
@@ -59,7 +59,7 @@ export default function Home() {
       <section className="section" id="positionierung">
         <div className="container">
           <SectionHead
-            eyebrow="Was WI3 ausmacht"
+            eyebrow="Was wi3 ausmacht"
             titel="Frische Perspektiven, die Theorie zur Praxis machen."
             lead="Unternehmen stehen vor strategischen, digitalen und organisatorischen Herausforderungen. Wir liefern smarte Lösungen – günstig, schnell und innovativ – und schaffen zugleich Studierenden den Raum, echten Impact zu erzeugen."
           />
@@ -90,7 +90,7 @@ export default function Home() {
                 So gestalten wir Wiesbadens studentische Unternehmensberatung.
               </h2>
               <p className="lead" style={{ color: "rgba(255,255,255,.82)", marginTop: 20 }}>
-                WI3 verbindet Talente der Region mit realen Projekten für smarte Lösungen in Wirtschaft und Gesellschaft.
+                wi3 verbindet Talente der Region mit realen Projekten für smarte Lösungen in Wirtschaft und Gesellschaft.
               </p>
               <p style={{ color: "rgba(255,255,255,.72)", marginTop: 16 }}>
                 Unser Kern: frische Ideen, top Fachwissen und Teamgeist. Wir stehen für Innovation, Nachhaltigkeit und
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
             <div className="split__body reveal">
               <p className="eyebrow">Unsere Werte</p>
-              <h2 className="h2" style={{ marginTop: 14 }}>Was WI3 im Kern ausmacht</h2>
+              <h2 className="h2" style={{ marginTop: 14 }}>Was wi3 im Kern ausmacht</h2>
               <p className="lead" style={{ marginTop: 18 }}>
                 Fünf Prinzipien prägen jede Zusammenarbeit – nach innen wie nach außen.
               </p>

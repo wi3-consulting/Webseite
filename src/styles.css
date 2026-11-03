@@ -67,9 +67,10 @@ button{ font-family:inherit; cursor:pointer; }
 
 /* ---------- Typography ---------- */
 h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.2; letter-spacing:-.015em; margin:0; color:var(--ink);
-  /* Lange deutsche Wörter („Unternehmensberatung“) sonst auf schmalen
-     Bildschirmen abgeschnitten – trennen statt überlaufen. */
-  hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word; text-wrap:balance; }
+  /* Keine Silbentrennung – die Schriftgrößen sind so gewählt, dass lange
+     Wörter („Unternehmensberatung“) passen. overflow-wrap greift nur als
+     Notbremse, falls ein Wort trotzdem breiter als der Bildschirm ist. */
+  overflow-wrap:break-word; text-wrap:balance; }
 .display{
   font-size:clamp(2.2rem, 4.6vw, 3.6rem);
   font-weight:600;

@@ -1,4 +1,4 @@
-import { seiten, teamItems, ressortItems } from "../lib/content.js";
+import { seiten, texte, teamItems, ressortItems } from "../lib/content.js";
 import { BtnLink, CtaBand, Hero, SectionHead } from "../components/Blocks.jsx";
 import { RESSORT_ICONS } from "../components/Icons.jsx";
 import { MARKE, usePageMeta } from "../lib/meta.js";
@@ -9,6 +9,8 @@ export default function Team() {
     `Vorstand und Ressortleitungen von ${MARKE}, der studentischen Unternehmensberatung in Wiesbaden.`
   );
   const s = seiten.team;
+  // Texte aus content/texte/team.json – im CMS unter „Texte → Team“.
+  const t = texte.team;
 
   return (
     <>
@@ -18,8 +20,8 @@ export default function Team() {
         alt={s.hero_alt}
         ausschnitt={s.hero_ausschnitt}
         eyebrow="Team"
-        titel="Vorstand und Ressortleitungen"
-        lead={`Die Studierenden, die ${MARKE} leiten und organisieren.`}
+        titel={t.hero.titel}
+        lead={t.hero.text}
       >
         <BtnLink to="/team#vorstand" className="btn btn--light" withArrow>Zum Vorstand</BtnLink>
         <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
@@ -28,10 +30,7 @@ export default function Team() {
       {/* ===================== VORSTAND ===================== */}
       <section className="section" id="vorstand">
         <div className="container">
-          <SectionHead
-            titel="Vorstand"
-            lead="Der Vorstand verantwortet Strategie, operative Abläufe und Finanzen des Vereins."
-          />
+          <SectionHead titel={t.vorstand.titel} lead={t.vorstand.text} />
           {/* Inhalt aus content/team.json – im CMS unter „Team“ pflegbar. */}
           <div className="grid grid-3" id="team-grid" data-stagger="100">
             {teamItems.map((m) => (
@@ -54,7 +53,7 @@ export default function Team() {
       {/* ===================== RESSORTLEITUNGEN ===================== */}
       <section className="section bg-paper-2">
         <div className="container">
-          <SectionHead titel="Ressortleitungen" />
+          <SectionHead titel={t.ressortleitungen.titel} lead={t.ressortleitungen.text} />
           {/* Leitet sich aus content/ressorts.json ab – wer dort als
               Ressortleitung eingetragen ist, erscheint hier automatisch. */}
           <div className="grid grid-3" data-stagger="80">
@@ -77,8 +76,8 @@ export default function Team() {
         bild={s.cta_bild}
         alt={s.cta_alt}
         ausschnitt={s.cta_ausschnitt}
-        titel="Werde Teil des Teams"
-        text="Wir suchen Studierende, die Lust auf Projektarbeit und Verantwortung im Verein haben."
+        titel={t.banner.titel}
+        text={t.banner.text}
         buttonLabel="Bewerben"
         buttonTo="/kontakt?anliegen=bewerbung"
       />

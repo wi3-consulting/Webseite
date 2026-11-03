@@ -180,10 +180,12 @@ Diese Datei legt fest, **welche Felder** es im CMS gibt. Beispiel Galerie:
 Willst du später ein zusätzliches Feld, fügst du hier eine Zeile hinzu und
 verwendest es in der passenden Seite unter `src/pages/`.
 
-### Fünf Bereiche sind eingerichtet
+### Sechs Bereiche sind eingerichtet
+- **Texte** → Überschriften und Texte aller Seiten, eine Datei pro Seite unter
+  `content/texte/` (Kennzahlen, Werte, Leistungen, Vorteile, Ablauf, Impressum-Angaben)
 - **Seitenbilder** → die Kopfbilder aller Seiten und die Bilder in den
   farbigen Aufruf-Bannern am Seitenende
-- **Galerie** → Sektion „Impressionen" auf der Startseite (beliebig erweiterbar)
+- **Galerie** → Abschnitt „Einblicke" auf der Startseite (beliebig erweiterbar)
 - **Team** → die Vorstandsfotos
 - **Ressorts** → Bild, Titel, Text und Ressortleitung jedes Ressorts
 - **Logo & Kontaktdaten** → Logo, Vereinsname, Adresse, E-Mail, Öffnungszeiten
@@ -224,9 +226,16 @@ CMS → **Ressorts** → beim Ressort **Ressortleiter/in** und optional ein
 Profilbild eintragen → Publish. Der Name erscheint dann auf der Ressorts-Seite
 und auf der Team-Seite; leer bedeutet „N.N.".
 
-### E) Einen Text ändern, der nicht im CMS liegt
-Überschriften und Fließtexte stehen direkt in der jeweiligen Seite unter
-`src/pages/`. Datei öffnen, Satz suchen, ändern, speichern.
+### E) Einen Text ändern
+Die meisten Texte liegen im CMS unter **Texte** (Dateien in `content/texte/`).
+Nur Navigation, Button-Beschriftungen und der rechtliche Standardtext im
+Impressum stehen direkt in `src/pages/` bzw. `src/components/`.
+
+Das CMS läuft im **Freigabe-Modus** (`publish_mode: editorial_workflow` in
+`public/admin/config.yml`): Gespeichertes ist erst ein Entwurf und geht nach
+„Veröffentlichen" im Reiter „Arbeitsablauf" live. Neue Symbole für Karten
+müssen in `SYMBOLE` (`src/components/Icons.jsx`) **und** in den Symbol-Optionen
+der `config.yml` ergänzt werden.
 
 ### F) Eine Farbe ändern
 `src/styles.css` öffnen → ganz oben `--navy` oder `--accent` anpassen → speichern.

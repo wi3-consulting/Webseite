@@ -1,4 +1,4 @@
-import { einstellungen } from "../lib/content.js";
+import { einstellungen, texte } from "../lib/content.js";
 import { MARKE, usePageMeta } from "../lib/meta.js";
 
 export default function Impressum() {
@@ -6,6 +6,11 @@ export default function Impressum() {
     `Impressum | ${MARKE}`,
     "Impressum von wi3 consulting e.V., Studentische Unternehmensberatung Wiesbaden."
   );
+  // Angaben aus content/texte/impressum.json – im CMS unter „Texte → Impressum“.
+  // Der rechtliche Standardtext (Haftung, Urheberrecht) bleibt bewusst im Code.
+  const t = texte.impressum;
+  const internetUrl = /^https?:\/\//.test(t.internet) ? t.internet : `https://${t.internet}`;
+
   return (
     <section className="section" style={{ paddingTop: "clamp(50px,7vw,90px)" }}>
       <div className="container" style={{ maxWidth: 840 }}>
@@ -15,15 +20,13 @@ export default function Impressum() {
 
         <div className="prose-block reveal">
           <h2>Angaben gemäß § 5 TMG</h2>
-          <p style={{ color: "var(--ink)", fontWeight: 600, marginTop: 14 }}>
-            wi3 consulting e.V. – Studentische Unternehmensberatung Wiesbaden
-          </p>
-          <p>Kurt-Schumacher-Ring 18<br />c/o HS RheinMain Career Center<br />65197 Wiesbaden</p>
+          <p style={{ color: "var(--ink)", fontWeight: 600, marginTop: 14 }}>{t.verein}</p>
+          <p style={{ whiteSpace: "pre-line" }}>{t.anschrift}</p>
         </div>
 
         <div className="prose-block reveal">
           <h2>Vertretungsberechtigte</h2>
-          <p>Anh Thi Le, Simon Liebetanz, Joyce Milleit</p>
+          <p>{t.vertretungsberechtigte}</p>
         </div>
 
         <div className="prose-block reveal">
@@ -31,15 +34,15 @@ export default function Impressum() {
           <p><strong style={{ color: "var(--ink)" }}>E-Mail:</strong> {einstellungen.email}</p>
           <p>
             <strong style={{ color: "var(--ink)" }}>Internet:</strong>{" "}
-            <a href="https://www.wi3consulting.de">www.wi3consulting.de</a>
+            <a href={internetUrl}>{t.internet}</a>
           </p>
         </div>
 
         <div className="prose-block reveal">
           <h2>Registereintrag</h2>
           <p>Eintragung im Vereinsregister</p>
-          <p><strong style={{ color: "var(--ink)" }}>Registernummer:</strong> VR 6947</p>
-          <p><strong style={{ color: "var(--ink)" }}>Registergericht:</strong> Wiesbaden</p>
+          <p><strong style={{ color: "var(--ink)" }}>Registernummer:</strong> {t.registernummer}</p>
+          <p><strong style={{ color: "var(--ink)" }}>Registergericht:</strong> {t.registergericht}</p>
         </div>
 
         <div className="prose-block reveal">

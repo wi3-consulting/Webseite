@@ -1,4 +1,4 @@
-import { seiten, ressortItems } from "../lib/content.js";
+import { seiten, texte, ressortItems } from "../lib/content.js";
 import { BtnLink, Hero, SectionHead } from "../components/Blocks.jsx";
 import { RESSORT_ICONS } from "../components/Icons.jsx";
 import { MARKE, usePageMeta } from "../lib/meta.js";
@@ -9,6 +9,8 @@ export default function Ressorts() {
     `Die Ressorts von ${MARKE}: ${ressortItems.map((r) => r.titel).join(", ")}.`
   );
   const s = seiten.ressorts;
+  // Texte aus content/texte/ressorts.json – im CMS unter „Texte → Ressorts“.
+  const t = texte.ressorts;
 
   return (
     <>
@@ -18,8 +20,8 @@ export default function Ressorts() {
         alt={s.hero_alt}
         ausschnitt={s.hero_ausschnitt}
         eyebrow="Organisation"
-        titel="Unsere Ressorts"
-        lead="Der Verein ist in Ressorts gegliedert. Jedes verantwortet einen eigenen Bereich – gemeinsam sorgen sie für eine strukturierte Arbeitsweise."
+        titel={t.hero.titel}
+        lead={t.hero.text}
       >
         <BtnLink to="/ressorts#departments" className="btn btn--light" withArrow>Zur Übersicht</BtnLink>
         <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
@@ -27,10 +29,7 @@ export default function Ressorts() {
 
       <section className="section" id="departments">
         <div className="container">
-          <SectionHead
-            titel="Aufgaben der Ressorts"
-            lead="Hier sehen Sie, wer wofür zuständig ist."
-          />
+          <SectionHead titel={t.uebersicht.titel} lead={t.uebersicht.text} />
 
           {/* Karten kommen aus content/ressorts.json – im CMS unter „Ressorts“ pflegbar. */}
           <div className="grid grid-3" id="ressorts-grid" data-stagger="90">
@@ -65,10 +64,8 @@ export default function Ressorts() {
 
             <article className="feature-card reveal"
               style={{ background: "var(--navy)", borderColor: "transparent", display: "flex", flexDirection: "column", justifyContent: "center", padding: 34 }}>
-              <h3 className="h3" style={{ color: "#fff" }}>Mitarbeit in einem Ressort</h3>
-              <p style={{ color: "rgba(255,255,255,.78)", marginTop: 10 }}>
-                Du möchtest dich engagieren? Erfahre, wie du bei uns einsteigen kannst.
-              </p>
+              <h3 className="h3" style={{ color: "#fff" }}>{t.karte.titel}</h3>
+              <p style={{ color: "rgba(255,255,255,.78)", marginTop: 10 }}>{t.karte.text}</p>
               <BtnLink to="/studierende" className="textlink"
                 style={{ color: "#fff", marginTop: 18, alignSelf: "flex-start" }}>
                 Für Studierende

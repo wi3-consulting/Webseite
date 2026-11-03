@@ -1,19 +1,25 @@
-# wi3 consulting – Bilder verwalten mit dem CMS (Decap)
+# wi3 consulting – Texte und Bilder pflegen mit dem CMS (Decap)
 
 Die Website hat ein eingebautes Content-Management-System. Damit können auch
-Personen ohne Programmierkenntnisse **Bilder samt Beschreibung hinzufügen,
+Personen ohne Programmierkenntnisse **Texte ändern und Bilder hinzufügen,
 austauschen oder löschen** – über eine einfache Oberfläche unter `/admin/`.
 
 Verwaltet werden:
-- **Seitenbilder** – die großen Kopfbilder aller Seiten und die Bilder in den
-  farbigen Aufruf-Bannern am Seitenende
-- **Galerie** (Sektion „Impressionen" auf der Startseite) – beliebig erweiterbar
+- **Texte** – Überschriften und Texte aller Seiten, die Kennzahlen, Werte,
+  Leistungen, Vorteile, der Projektablauf und die Angaben im Impressum
+- **Seitenbilder** – die großen Kopfbilder aller Seiten, die Bilder in den
+  farbigen Aufruf-Bannern am Seitenende und die Bilder in einzelnen Abschnitten
+- **Galerie** (Abschnitt „Einblicke" auf der Startseite) – beliebig erweiterbar
 - **Team** (Vorstandsfotos inkl. Name, Rolle, Text)
 - **Ressorts** (Bild, Titel, Beschreibung und Ressortleitung je Ressort)
 - **Logo & Kontaktdaten** (Logo, Vereinsname, Adresse, E-Mail, Öffnungszeiten)
 
 **Jedes Bild der Website lässt sich darüber austauschen** – es gibt keine fest
 im Code verdrahteten Fotos mehr.
+
+**Nicht im CMS** (bewusst, ändert sich praktisch nie): Navigation,
+Button-Beschriftungen, Seitenaufbau, das Kontaktformular und der rechtliche
+Standardtext im Impressum (Haftung, Urheberrecht).
 
 Alle hochgeladenen Bilder landen automatisch im Ordner
 **`public/assets/uploads/`**. Die Beschreibungen werden in den Dateien unter
@@ -44,24 +50,44 @@ eine Einladung, vergibt ein Passwort und kann sich danach unter
 
 ---
 
-## 2. So fügt man ein neues Bild hinzu (für Redakteure)
+## 2. Änderungen machen – mit Freigabe (für Redakteure)
 
-1. `https://DEINE-DOMAIN/admin/` öffnen und einloggen.
-2. Links den Bereich wählen, z. B. **„Galerie (Startseite)"**.
-3. Auf den vorhandenen Eintrag **„Galerie-Bilder"** klicken.
-4. Unten bei **Bilder** auf **„Add Bild"** klicken.
-5. **Bild hochladen** (oder ein bereits hochgeladenes auswählen) und die
-   **Beschreibung** eintragen. (Optional: Alt-Text für Barrierefreiheit.)
-6. Oben rechts **„Save"** und dann **„Publish"**.
+Das CMS arbeitet im **Freigabe-Modus**: Eine Änderung geht nicht sofort live,
+sondern landet zuerst als Entwurf. So kann jemand anderes drüberschauen, bevor
+sie veröffentlicht wird.
+
+1. `https://www.wi3consulting.de/admin/` öffnen und einloggen.
+2. Links den Bereich wählen, z. B. **„Texte"** → **„Startseite"**.
+3. Text ändern bzw. Bild hochladen.
+4. Oben **„Speichern"**. Die Änderung ist jetzt ein **Entwurf** – noch nicht live.
+5. Oben den Status auf **„Bereit"** stellen, wenn du fertig bist.
+6. Die Person, die freigibt, öffnet oben den Reiter **„Arbeitsablauf"**, prüft
+   den Eintrag in der Spalte „Bereit" und klickt **„Veröffentlichen"**.
 
 Netlify baut die Seite danach automatisch neu – nach ein bis zwei Minuten ist
-das Bild live. Genauso lassen sich Bilder **austauschen** (Bild im Eintrag
-ersetzen) oder **entfernen** (Eintrag löschen). Die übrigen Bereiche
-funktionieren identisch.
+die Änderung live. Technisch kann jeder eingeloggte Nutzer veröffentlichen;
+die Freigabe ist eine Absprache im Team (Empfehlung: Marketing-Leitung oder
+Vorstand gibt frei).
+
+### Schreibregeln für Texte
+- **„wi3 consulting" immer klein schreiben** – auch am Satzanfang.
+- **Kurz und sachlich.** Überschriften ca. 3–8 Wörter, Texte 1–2 Sätze. Die
+  Hinweise unter den Feldern im CMS geben die Länge vor.
+- **Keine Werbefloskeln** („Impact", „Zukunftsgestalter", „smarte Lösungen")
+  und keine Ausrufezeichen in Überschriften.
+- **Nur Fakten, die stimmen** – z. B. Kennzahlen regelmäßig aktualisieren.
+- **Impressum:** Nach jeder Vorstandswahl die Vertretungsberechtigten anpassen.
+
+### Ein neues Galerie-Bild hinzufügen
+**Galerie (Startseite)** → **„Galerie-Bilder"** → unten **„Bild hinzufügen"** →
+Bild hochladen, Bildbeschreibung (Alt-Text) eintragen → Speichern → Bereit →
+Veröffentlichen. Genauso lassen sich Bilder **austauschen** (Bild im Eintrag
+ersetzen) oder **entfernen** (Eintrag löschen).
 
 ### Ein Kopfbild austauschen
 **Seitenbilder** → gewünschte Seite aufklappen (z. B. „Für Unternehmen") →
-beim **Kopfbild** auf das Bild klicken → neues Bild wählen → Save → Publish.
+beim **Kopfbild** auf das Bild klicken → neues Bild wählen → Speichern →
+Bereit → Veröffentlichen.
 
 ### Gut zu wissen
 - Der **Alt-Text** beschreibt das Bild für Screenreader und Suchmaschinen. Kurz

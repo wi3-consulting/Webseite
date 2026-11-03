@@ -1,0 +1,94 @@
+{
+  "hero": {
+    "titel": "Beratung mit frischem Blick",
+    "text": "Wir unterstützen Sie bei strategischen, digitalen und organisatorischen Fragestellungen – strukturiert, verlässlich und zu fairen Konditionen."
+  },
+  "warum": {
+    "titel": "Warum studentische Beratung?",
+    "text": "Unsere Berater bringen aktuelles Wissen aus dem Studium direkt in Ihr Projekt ein. Sie erhalten eine unvoreingenommene Außensicht und ausgearbeitete Ergebnisse, mit denen Sie weiterarbeiten können.",
+    "vorteile": [
+      {
+        "symbol": "pfeil-hoch",
+        "titel": "Faire Konditionen",
+        "text": "Fundierte Beratung zu Konditionen, die auch für kleinere Unternehmen tragbar sind."
+      },
+      {
+        "symbol": "funke",
+        "titel": "Aktuelle Methoden",
+        "text": "Unsere Teams arbeiten mit Methoden und Werkzeugen, die sie im Studium gerade anwenden."
+      },
+      {
+        "symbol": "blitz",
+        "titel": "Kurze Wege",
+        "text": "Flexible Teams und feste Ansprechpartner sorgen für schnelle Abstimmung."
+      },
+      {
+        "symbol": "personen",
+        "titel": "Partnerschaftlich",
+        "text": "Wir arbeiten eng mit Ihren Mitarbeitenden zusammen – nicht an ihnen vorbei."
+      }
+    ]
+  },
+  "leistungen": {
+    "titel": "Leistungen",
+    "text": "Von der ersten Analyse bis zum fertigen Konzept begleiten wir Sie durch das gesamte Projekt.",
+    "liste": [
+      {
+        "symbol": "bildschirm",
+        "titel": "Digitalisierung",
+        "text": "Prozesse, Strukturen und Arbeitsabläufe digital weiterentwickeln."
+      },
+      {
+        "symbol": "zahnrad",
+        "titel": "Prozessoptimierung",
+        "text": "Abläufe analysieren, Schwachstellen erkennen und Verbesserungen umsetzen."
+      },
+      {
+        "symbol": "diagramm",
+        "titel": "Marktanalyse",
+        "text": "Markt- und Wettbewerbsanalysen als Grundlage für strategische Entscheidungen."
+      },
+      {
+        "symbol": "megafon",
+        "titel": "Marketing & Strategie",
+        "text": "Positionierung schärfen und Maßnahmen für mehr Sichtbarkeit entwickeln."
+      },
+      {
+        "symbol": "buch",
+        "titel": "Workshops & Schulungen",
+        "text": "Formate zu digitalen Werkzeugen, agilen Methoden und weiteren Fachthemen."
+      },
+      {
+        "symbol": "dokument",
+        "titel": "Konzeptentwicklung",
+        "text": "Ausgearbeitete Konzepte und Handlungsempfehlungen für Ihre Fragestellung."
+      }
+    ]
+  },
+  "ablauf": {
+    "titel": "Projektablauf",
+    "text": "Ein klarer Prozess mit festen Abstimmungspunkten.",
+    "schritte": [
+      {
+        "titel": "Erstgespräch",
+        "text": "Wir lernen uns kennen, klären die Fragestellung und legen den Projektrahmen fest."
+      },
+      {
+        "titel": "Analyse",
+        "text": "Wir analysieren die Ausgangslage und identifizieren Handlungsfelder."
+      },
+      {
+        "titel": "Erarbeitung",
+        "text": "Das Projektteam entwickelt konkrete Lösungen und stimmt sie mit Ihnen ab."
+      },
+      {
+        "titel": "Übergabe",
+        "text": "Wir präsentieren die Ergebnisse und übergeben alle Unterlagen."
+      }
+    ]
+  },
+  "banner": {
+    "titel": "Sprechen Sie uns an",
+    "text": "In einem unverbindlichen Erstgespräch klären wir, wie wi3 consulting Sie unterstützen kann."
+  }
+}

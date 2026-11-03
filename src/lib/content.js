@@ -10,7 +10,24 @@ import galerie from "../../content/galerie.json";
 import team from "../../content/team.json";
 import ressorts from "../../content/ressorts.json";
 
+/* Seitentexte – im CMS unter „Texte“ pflegbar, eine Datei pro Seite. */
+import textStart from "../../content/texte/start.json";
+import textUnternehmen from "../../content/texte/unternehmen.json";
+import textStudierende from "../../content/texte/studierende.json";
+import textRessorts from "../../content/texte/ressorts.json";
+import textTeam from "../../content/texte/team.json";
+import textImpressum from "../../content/texte/impressum.json";
+
 export { einstellungen, seiten };
+
+export const texte = {
+  start: textStart,
+  unternehmen: textUnternehmen,
+  studierende: textStudierende,
+  ressorts: textRessorts,
+  team: textTeam,
+  impressum: textImpressum,
+};
 
 export const galerieItems = galerie.items || [];
 export const teamItems = team.items || [];

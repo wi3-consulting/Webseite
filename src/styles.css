@@ -66,7 +66,10 @@ button{ font-family:inherit; cursor:pointer; }
 :focus-visible{ outline:2px solid var(--navy-700); outline-offset:3px; border-radius:2px; }
 
 /* ---------- Typography ---------- */
-h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.2; letter-spacing:-.015em; margin:0; color:var(--ink); }
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.2; letter-spacing:-.015em; margin:0; color:var(--ink);
+  /* Lange deutsche Wörter („Unternehmensberatung“) sonst auf schmalen
+     Bildschirmen abgeschnitten – trennen statt überlaufen. */
+  hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word; text-wrap:balance; }
 .display{
   font-size:clamp(2.2rem, 4.6vw, 3.6rem);
   font-weight:600;
@@ -118,6 +121,7 @@ p{ margin:0; }
 .btn--outline{ background:transparent; color:var(--navy); border-color:var(--navy); }
 .btn--outline:hover{ background:var(--navy); color:#fff; }
 .btn-row{ display:flex; flex-wrap:wrap; gap:12px; }
+.btn-row--end{ justify-content:flex-end; }
 
 .textlink{
   display:inline-flex; align-items:center; gap:.4rem; font-weight:600; color:var(--navy);
@@ -393,6 +397,7 @@ p{ margin:0; }
 @media (max-width: 860px){
   .split{ grid-template-columns:1fr; gap:34px; }
   .split--reverse .split__media{ order:0; }
+  .btn-row--end{ justify-content:flex-start; }
   .grid-3{ grid-template-columns:repeat(2,1fr); }
   .stats{ grid-template-columns:repeat(2,1fr); }
   .pillars{ grid-template-columns:1fr; }
@@ -402,6 +407,11 @@ p{ margin:0; }
 }
 @media (max-width: 560px){
   body{ font-size:16px; }
+  /* So bemessen, dass „Unternehmensberatung“ auch bei 360px Breite
+     noch in eine Zeile passt (ca. 11,5em breit). */
+  .display{ font-size:clamp(1.55rem, 7.5vw, 2.2rem); letter-spacing:-.02em; }
+  /* Untereinander umbrechende Buttons gleich breit statt treppenartig */
+  .btn-row .btn{ flex:1 1 100%; justify-content:center; }
   .values__row{ grid-template-columns:1fr; gap:4px; }
   .grid-2, .grid-3, .grid-4{ grid-template-columns:1fr; }
   .stats{ grid-template-columns:1fr 1fr; }

@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "titel": "Praxiserfahrung neben dem Studium",
+    "text": "Bei uns bearbeitest du echte Projekte, übernimmst Verantwortung im Verein und lernst Unternehmen aus der Region kennen."
+  },
+  "mitarbeit": {
+    "titel": "Mitarbeit bei wi3 consulting",
+    "text": "Als Mitglied bearbeitest du schon während des Studiums Beratungsprojekte, übernimmst Verantwortung und entwickelst dich fachlich wie persönlich weiter.",
+    "text2": "Du arbeitest in Teams mit Studierenden anderer Fachrichtungen und sammelst Erfahrung, die dir beim Berufseinstieg hilft.",
+    "karte_titel": "Theorie trifft Praxis",
+    "karte_text": "Was du im Studium lernst, wendest du bei uns direkt an – mit echten Kunden, Deadlines und Ergebnissen.",
+    "fakten": [
+      {
+        "bezeichnung": "Projekte",
+        "wert": "mit Unternehmen"
+      },
+      {
+        "bezeichnung": "Erfahrung",
+        "wert": "ab dem ersten Tag"
+      }
+    ]
+  },
+  "vorteile": {
+    "titel": "Was dich erwartet",
+    "text": "Gründe, Mitglied bei wi3 consulting zu werden.",
+    "liste": [
+      {
+        "symbol": "dokument-einfach",
+        "titel": "Echte Projekte",
+        "text": "Du arbeitest an Beratungsprojekten für Unternehmen aus der Region."
+      },
+      {
+        "symbol": "personen",
+        "titel": "Netzwerk",
+        "text": "Kontakte zu Unternehmen, Alumni und anderen studentischen Beratungen – auch bundesweit über das JCNetwork."
+      },
+      {
+        "symbol": "medaille",
+        "titel": "Persönliche Entwicklung",
+        "text": "Präsentieren, Moderieren, Führen – Fähigkeiten, die im Hörsaal zu kurz kommen."
+      },
+      {
+        "symbol": "buch",
+        "titel": "Workshops & Schulungen",
+        "text": "Lean & Earn Schulungstage, interne Workshops und praxisnahe Weiterbildungen."
+      },
+      {
+        "symbol": "pfeil-hoch",
+        "titel": "Berufserfahrung",
+        "text": "Beratungserfahrung schon während des Studiums – ein klarer Pluspunkt im Lebenslauf."
+      },
+      {
+        "symbol": "kalender",
+        "titel": "Gemeinschaft",
+        "text": "Teamabende, gemeinsame Events und ein Team, das sich gegenseitig unterstützt."
+      }
+    ]
+  },
+  "jcnetwork": {
+    "kicker": "Unterwegs mit dem Team",
+    "titel": "JCNetwork Days",
+    "text": "Zweimal im Jahr treffen sich die Mitglieder des JCNetwork, des Dachverbands studentischer Unternehmensberatungen, zu den JCNetwork Days – einem mehrtägigen Kongress in wechselnden Städten.",
+    "text2": "Auf dem Programm stehen Workshops und Schulungen, Vorträge von Unternehmen und viel Austausch mit Studierenden anderer Beratungen. Wir fahren als Team mit – für dich eine gute Gelegenheit, Kontakte zu Unternehmen zu knüpfen und das Netzwerk kennenzulernen."
+  },
+  "ressorts": {
+    "titel": "Ressorts",
+    "text": "Je nach Interesse und Stärken engagierst du dich in einem unserer Ressorts."
+  },
+  "banner": {
+    "titel": "Werde Mitglied",
+    "text": "Schreib uns kurz, wer du bist und was du studierst – wir melden uns bei dir."
+  }
+}

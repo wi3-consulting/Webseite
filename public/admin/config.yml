@@ -23,10 +23,324 @@ locale: "de"
 site_url: https://www.wi3consulting.de
 logo_url: /Logo_blau.png
 
-# Hinweistext beim Veröffentlichen
-publish_mode: simple
+# Freigabe-Modus: Änderungen werden zuerst als Entwurf gespeichert und
+# erscheinen im Reiter „Arbeitsablauf“. Erst „Veröffentlichen“ bringt sie
+# auf die Live-Seite.
+publish_mode: editorial_workflow
 
 collections:
+  # ---------------- TEXTE ----------------
+  # Die Symbol-Namen müssen zu SYMBOLE in src/components/Icons.jsx passen.
+  - name: "texte"
+    label: "Texte"
+    description: "Überschriften und Texte aller Seiten. Bitte kurz und sachlich schreiben – „wi3 consulting“ immer klein. Änderungen landen zuerst als Entwurf im „Arbeitsablauf“ und gehen erst nach „Veröffentlichen“ live."
+    files:
+      - name: "start"
+        label: "Startseite"
+        file: "content/texte/start.json"
+        fields:
+          - label: "Kopfbereich"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string", hint: "Die große Überschrift im Bild. Ca. 3–7 Wörter. „wi3“ immer klein schreiben." }
+              - { label: "Text", name: "text", widget: "text", hint: "Ein Satz, max. ca. 30 Wörter." }
+          - label: "Über uns"
+            name: "ueber_uns"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string", hint: "Kurz und sachlich, ca. 3–8 Wörter. Ohne Ausrufezeichen." }
+              - { label: "Text", name: "text", widget: "text", required: false, hint: "1–2 Sätze. Konkret bleiben, keine Werbefloskeln." }
+              - label: "Punkte"
+                name: "punkte"
+                widget: "list"
+                summary: "{{fields.titel}}"
+                fields:
+                  - { label: "Überschrift", name: "titel", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text", hint: "1–2 Sätze." }
+                  - label: "Link führt zu (optional)"
+                    name: "link_ziel"
+                    widget: "select"
+                    required: false
+                    options:
+                      - { label: "Für Unternehmen", value: "/unternehmen" }
+                      - { label: "Für Studierende", value: "/studierende" }
+                      - { label: "Ressorts", value: "/ressorts" }
+                      - { label: "Team", value: "/team" }
+                      - { label: "Kontakt", value: "/kontakt" }
+                  - { label: "Link-Text (optional)", name: "link_text", widget: "string", required: false, hint: "z. B. „Zu den Leistungen“" }
+          - label: "Zahlen"
+            name: "zahlen"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+              - label: "Kennzahlen"
+                name: "kennzahlen"
+                widget: "list"
+                summary: "{{fields.zahl}}{{fields.zusatz}} {{fields.beschriftung}}"
+                hint: "Am besten 4 Kennzahlen (2×2-Raster)."
+                fields:
+                  - { label: "Zahl", name: "zahl", widget: "number", value_type: "int", min: 0 }
+                  - { label: "Zusatz", name: "zusatz", widget: "string", required: false, hint: "z. B. „+“ – oder leer lassen" }
+                  - { label: "Beschriftung", name: "beschriftung", widget: "string", hint: "z. B. „Mitglieder“" }
+          - label: "Werte"
+            name: "werte"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+              - label: "Werte"
+                name: "liste"
+                widget: "list"
+                summary: "{{fields.titel}}"
+                fields:
+                  - { label: "Wert", name: "titel", widget: "string", hint: "Ein Wort, z. B. „Vertrauen“" }
+                  - { label: "Erklärung", name: "text", widget: "text", hint: "1 Satz." }
+          - label: "Ressorts (Überschrift)"
+            name: "ressorts"
+            widget: "object"
+            collapsed: true
+            hint: "Die Ressort-Kacheln selbst werden unter „Ressorts“ gepflegt."
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+          - label: "JCNetwork"
+            name: "netzwerk"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Kleine Zeile über der Überschrift (optional)", name: "kicker", widget: "string", required: false, hint: "1–3 Wörter, z. B. „Netzwerk“." }
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Zweiter Absatz (optional)", name: "text2", widget: "text", required: false }
+          - label: "Galerie (Überschrift)"
+            name: "galerie"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+          - label: "Kontakt am Seitenende"
+            name: "kontakt"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false, hint: "Die E-Mail-Adresse wird automatisch darunter angezeigt." }
+
+      - name: "unternehmen"
+        label: "Für Unternehmen"
+        file: "content/texte/unternehmen.json"
+        fields:
+          - label: "Kopfbereich"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string", hint: "Die große Überschrift im Bild. Ca. 3–7 Wörter." }
+              - { label: "Text", name: "text", widget: "text", hint: "Ein Satz, max. ca. 30 Wörter." }
+          - label: "Warum studentische Beratung"
+            name: "warum"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+              - label: "Vorteile"
+                name: "vorteile"
+                widget: "list"
+                summary: "{{fields.titel}}"
+                hint: "Am besten 4 Vorteile (2×2-Raster)."
+                fields: &kartenfelder
+                  - label: "Symbol"
+                    name: "symbol"
+                    widget: "select"
+                    options:
+                      - { label: "Pfeil nach oben", value: "pfeil-hoch" }
+                      - { label: "Funke", value: "funke" }
+                      - { label: "Blitz", value: "blitz" }
+                      - { label: "Personen", value: "personen" }
+                      - { label: "Handschlag", value: "handschlag" }
+                      - { label: "Bildschirm", value: "bildschirm" }
+                      - { label: "Zahnrad", value: "zahnrad" }
+                      - { label: "Diagramm", value: "diagramm" }
+                      - { label: "Megafon", value: "megafon" }
+                      - { label: "Buch", value: "buch" }
+                      - { label: "Dokument", value: "dokument" }
+                      - { label: "Dokument (einfach)", value: "dokument-einfach" }
+                      - { label: "Medaille", value: "medaille" }
+                      - { label: "Kalender", value: "kalender" }
+                  - { label: "Überschrift", name: "titel", widget: "string", hint: "1–3 Wörter." }
+                  - { label: "Text", name: "text", widget: "text", hint: "1 Satz." }
+          - label: "Leistungen"
+            name: "leistungen"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+              - label: "Leistungen"
+                name: "liste"
+                widget: "list"
+                summary: "{{fields.titel}}"
+                hint: "Am besten 3, 6 oder 9 Leistungen (3er-Raster)."
+                fields: *kartenfelder
+          - label: "Projektablauf"
+            name: "ablauf"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+              - label: "Schritte"
+                name: "schritte"
+                widget: "list"
+                summary: "{{fields.titel}}"
+                hint: "Werden automatisch nummeriert. Am besten 4 Schritte."
+                fields:
+                  - { label: "Überschrift", name: "titel", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text", hint: "1 Satz." }
+          - label: "Banner am Seitenende"
+            name: "banner"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+
+      - name: "studierende"
+        label: "Für Studierende"
+        file: "content/texte/studierende.json"
+        fields:
+          - label: "Kopfbereich"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string", hint: "Die große Überschrift im Bild. Ca. 3–7 Wörter." }
+              - { label: "Text", name: "text", widget: "text", hint: "Ein Satz, max. ca. 30 Wörter." }
+          - label: "Mitarbeit"
+            name: "mitarbeit"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Zweiter Absatz (optional)", name: "text2", widget: "text", required: false }
+              - { label: "Karte: Überschrift", name: "karte_titel", widget: "string" }
+              - { label: "Karte: Text", name: "karte_text", widget: "text" }
+              - label: "Karte: Fakten"
+                name: "fakten"
+                widget: "list"
+                summary: "{{fields.bezeichnung}}: {{fields.wert}}"
+                hint: "Am besten 2 Fakten."
+                fields:
+                  - { label: "Bezeichnung", name: "bezeichnung", widget: "string", hint: "z. B. „Erfahrung“" }
+                  - { label: "Wert", name: "wert", widget: "string", hint: "z. B. „ab dem ersten Tag“" }
+          - label: "Vorteile"
+            name: "vorteile"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+              - label: "Vorteile"
+                name: "liste"
+                widget: "list"
+                summary: "{{fields.titel}}"
+                hint: "Am besten 3 oder 6 Vorteile (3er-Raster)."
+                fields: *kartenfelder
+          - label: "JCNetwork Days"
+            name: "jcnetwork"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Kleine Zeile über der Überschrift (optional)", name: "kicker", widget: "string", required: false }
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Zweiter Absatz (optional)", name: "text2", widget: "text", required: false }
+          - label: "Ressorts (Überschrift)"
+            name: "ressorts"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+          - label: "Banner am Seitenende"
+            name: "banner"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+
+      - name: "ressorts"
+        label: "Ressorts-Seite"
+        file: "content/texte/ressorts.json"
+        fields:
+          - label: "Kopfbereich"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string", hint: "Die große Überschrift im Bild. Ca. 3–7 Wörter." }
+              - { label: "Text", name: "text", widget: "text", hint: "Ein Satz, max. ca. 30 Wörter." }
+          - label: "Übersicht (Überschrift)"
+            name: "uebersicht"
+            widget: "object"
+            hint: "Die Ressort-Karten selbst werden unter „Ressorts“ gepflegt."
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+          - label: "Blaue Karte am Ende"
+            name: "karte"
+            widget: "object"
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+
+      - name: "team"
+        label: "Team-Seite"
+        file: "content/texte/team.json"
+        fields:
+          - label: "Kopfbereich"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string", hint: "Die große Überschrift im Bild. Ca. 3–7 Wörter." }
+              - { label: "Text", name: "text", widget: "text", hint: "Ein Satz, max. ca. 30 Wörter." }
+          - label: "Vorstand (Überschrift)"
+            name: "vorstand"
+            widget: "object"
+            hint: "Die Vorstandsmitglieder selbst werden unter „Team (Vorstand)“ gepflegt."
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+          - label: "Ressortleitungen (Überschrift)"
+            name: "ressortleitungen"
+            widget: "object"
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+          - label: "Banner am Seitenende"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "Überschrift", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+
+      - name: "impressum"
+        label: "Impressum"
+        file: "content/texte/impressum.json"
+        fields:
+          - { label: "Name des Vereins", name: "verein", widget: "string" }
+          - { label: "Anschrift", name: "anschrift", widget: "text", hint: "Jede Zeile wird auf der Seite als eigene Zeile angezeigt." }
+          - { label: "Vertretungsberechtigte", name: "vertretungsberechtigte", widget: "string", hint: "Nach jeder Vorstandswahl aktualisieren! Namen mit Komma trennen." }
+          - { label: "Internetadresse", name: "internet", widget: "string" }
+          - { label: "Registernummer", name: "registernummer", widget: "string" }
+          - { label: "Registergericht", name: "registergericht", widget: "string" }
+
   # ---------------- SEITENBILDER ----------------
   - name: "seiten"
     label: "Seitenbilder"

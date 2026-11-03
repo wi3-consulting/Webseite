@@ -1,0 +1,106 @@
+{
+  "hero": {
+    "titel": "Studentische Unternehmensberatung in Wiesbaden",
+    "text": "Wir unterstützen Unternehmen aus der Region bei Fragen zu Digitalisierung, Prozessen, Markt und Strategie – mit engagierten Studierenden und aktuellem Fachwissen."
+  },
+  "ueber_uns": {
+    "titel": "Über uns",
+    "text": "Unternehmen stehen vor strategischen, digitalen und organisatorischen Fragen. Wir erarbeiten dazu Lösungen – und geben Studierenden die Möglichkeit, Verantwortung in echten Projekten zu übernehmen.",
+    "punkte": [
+      {
+        "titel": "Wer wir sind",
+        "text": "wi3 consulting ist ein eingetragener Verein von Studierenden aus Wiesbaden und Umgebung. Wir bearbeiten Beratungsprojekte für Unternehmen und verbinden dabei Studium und Praxis.",
+        "link_ziel": "",
+        "link_text": ""
+      },
+      {
+        "titel": "Für Unternehmen",
+        "text": "Analysen, Konzepte und Workshops zu fairen Konditionen – umgesetzt von Teams mit aktuellem Fachwissen aus dem Studium.",
+        "link_ziel": "/unternehmen",
+        "link_text": "Zu den Leistungen"
+      },
+      {
+        "titel": "Für Studierende",
+        "text": "Projekterfahrung mit echten Kunden, Verantwortung im Verein und ein Netzwerk, das über das Studium hinaus trägt.",
+        "link_ziel": "/studierende",
+        "link_text": "Mitglied werden"
+      },
+      {
+        "titel": "Kontakt",
+        "text": "Sie haben eine konkrete Fragestellung oder möchten uns kennenlernen? Wir melden uns zeitnah zurück.",
+        "link_ziel": "/kontakt",
+        "link_text": "Kontakt aufnehmen"
+      }
+    ]
+  },
+  "zahlen": {
+    "titel": "wi3 consulting in Zahlen",
+    "text": "Wir bringen Studierende verschiedener Hochschulen mit Unternehmen aus Wiesbaden und der Region zusammen.",
+    "kennzahlen": [
+      {
+        "zahl": 40,
+        "zusatz": "+",
+        "beschriftung": "Mitglieder"
+      },
+      {
+        "zahl": 30,
+        "zusatz": "+",
+        "beschriftung": "abgeschlossene Projekte"
+      },
+      {
+        "zahl": 350,
+        "zusatz": "+",
+        "beschriftung": "Workshops"
+      },
+      {
+        "zahl": 4,
+        "zusatz": "",
+        "beschriftung": "Hochschulen"
+      }
+    ]
+  },
+  "werte": {
+    "titel": "Unsere Werte",
+    "text": "Diese Grundsätze gelten in jedem Projekt und in der Zusammenarbeit innerhalb des Vereins.",
+    "liste": [
+      {
+        "titel": "Vertrauen",
+        "text": "Kunden können sich auf uns verlassen. Intern geben wir unseren Mitgliedern Rückhalt und Verantwortung."
+      },
+      {
+        "titel": "Neugier",
+        "text": "Wir arbeiten uns schnell in neue Themen ein und bringen aktuelles Wissen aus dem Studium in die Projekte."
+      },
+      {
+        "titel": "Professionalität",
+        "text": "Strukturiertes Vorgehen, verlässliche Absprachen und Ergebnisse, die termingerecht vorliegen."
+      },
+      {
+        "titel": "Wirkung",
+        "text": "Entscheidend ist, was beim Kunden ankommt: umsetzbare Ergebnisse und messbare Verbesserungen."
+      },
+      {
+        "titel": "Eigenverantwortung",
+        "text": "Jedes Mitglied hat Gestaltungsspielraum und trägt die Verantwortung für das eigene Ergebnis."
+      }
+    ]
+  },
+  "ressorts": {
+    "titel": "Unsere Ressorts",
+    "text": "Die Vereinsarbeit ist in Ressorts aufgeteilt. Jedes Ressort verantwortet einen klar umrissenen Bereich."
+  },
+  "netzwerk": {
+    "kicker": "Netzwerk",
+    "titel": "Mitglied im JCNetwork e.V.",
+    "text": "wi3 consulting ist Mitglied im JCNetwork, einem bundesweiten Dachverband studentischer Unternehmensberatungen in Deutschland.",
+    "text2": "Über den Verband tauschen wir uns mit studentischen Beratungen aus ganz Deutschland aus, bilden uns gemeinsam weiter und knüpfen Kontakte zu Unternehmen."
+  },
+  "galerie": {
+    "titel": "Einblicke",
+    "text": "Schulungstage, Workshops und Projektarbeit mit unseren Partnern."
+  },
+  "kontakt": {
+    "titel": "Sprechen Sie uns an",
+    "text": "Ob Projektanfrage, Kooperation oder Interesse an einer Mitgliedschaft – schreiben Sie uns eine E-Mail oder nutzen Sie das Kontaktformular."
+  }
+}

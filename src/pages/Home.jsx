@@ -1,29 +1,7 @@
-import { seiten, galerieItems, ressortItems, einstellungen } from "../lib/content.js";
+import { seiten, texte, galerieItems, ressortItems, einstellungen } from "../lib/content.js";
 import { BtnLink, Hero, SectionHead, Stat } from "../components/Blocks.jsx";
 import { RESSORT_ICONS } from "../components/Icons.jsx";
 import { MARKE, usePageMeta } from "../lib/meta.js";
-
-const PILLARS = [
-  { titel: "Wer wir sind", text: "wi3 consulting ist ein eingetragener Verein von Studierenden aus Wiesbaden und Umgebung. Wir bearbeiten Beratungsprojekte für Unternehmen und verbinden dabei Studium und Praxis." },
-  { titel: "Für Unternehmen", text: "Analysen, Konzepte und Workshops zu fairen Konditionen – umgesetzt von Teams mit aktuellem Fachwissen aus dem Studium.", link: { to: "/unternehmen", label: "Zu den Leistungen" } },
-  { titel: "Für Studierende", text: "Projekterfahrung mit echten Kunden, Verantwortung im Verein und ein Netzwerk, das über das Studium hinaus trägt.", link: { to: "/studierende", label: "Mitglied werden" } },
-  { titel: "Kontakt", text: "Sie haben eine konkrete Fragestellung oder möchten uns kennenlernen? Wir melden uns zeitnah zurück.", link: { to: "/kontakt", label: "Kontakt aufnehmen" } },
-];
-
-const STATS = [
-  { zahl: 40, suffix: "+", label: "Mitglieder" },
-  { zahl: 30, suffix: "+", label: "abgeschlossene Projekte" },
-  { zahl: 350, suffix: "+", label: "Workshops" },
-  { zahl: 4, suffix: "", label: "Hochschulen" },
-];
-
-const WERTE = [
-  { titel: "Vertrauen", text: "Kunden können sich auf uns verlassen. Intern geben wir unseren Mitgliedern Rückhalt und Verantwortung." },
-  { titel: "Neugier", text: "Wir arbeiten uns schnell in neue Themen ein und bringen aktuelles Wissen aus dem Studium in die Projekte." },
-  { titel: "Professionalität", text: "Strukturiertes Vorgehen, verlässliche Absprachen und Ergebnisse, die termingerecht vorliegen." },
-  { titel: "Wirkung", text: "Entscheidend ist, was beim Kunden ankommt: umsetzbare Ergebnisse und messbare Verbesserungen." },
-  { titel: "Eigenverantwortung", text: "Jedes Mitglied hat Gestaltungsspielraum und trägt die Verantwortung für das eigene Ergebnis." },
-];
 
 export default function Home() {
   usePageMeta(
@@ -31,6 +9,8 @@ export default function Home() {
     `${MARKE} ist die studentische Unternehmensberatung in Wiesbaden. Wir unterstützen Unternehmen bei Digitalisierung, Prozessen, Marktanalysen und Strategie.`
   );
   const s = seiten.start;
+  // Texte aus content/texte/start.json – im CMS unter „Texte → Startseite“.
+  const t = texte.start;
 
   return (
     <>
@@ -39,8 +19,8 @@ export default function Home() {
         alt={s.hero_alt}
         ausschnitt={s.hero_ausschnitt}
         eyebrow={MARKE}
-        titel="Studentische Unternehmensberatung in Wiesbaden"
-        lead="Wir unterstützen Unternehmen aus der Region bei Fragen zu Digitalisierung, Prozessen, Markt und Strategie – mit engagierten Studierenden und aktuellem Fachwissen."
+        titel={t.hero.titel}
+        lead={t.hero.text}
       >
         <BtnLink to="/unternehmen" className="btn btn--light" withArrow>Leistungen ansehen</BtnLink>
         <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
@@ -49,16 +29,13 @@ export default function Home() {
       {/* ===================== POSITIONIERUNG ===================== */}
       <section className="section" id="positionierung">
         <div className="container">
-          <SectionHead
-            titel="Über uns"
-            lead="Unternehmen stehen vor strategischen, digitalen und organisatorischen Fragen. Wir erarbeiten dazu Lösungen – und geben Studierenden die Möglichkeit, Verantwortung in echten Projekten zu übernehmen."
-          />
+          <SectionHead titel={t.ueber_uns.titel} lead={t.ueber_uns.text} />
           <div className="pillars" data-stagger="80">
-            {PILLARS.map((p) => (
-              <div className="pillar reveal" key={p.titel}>
+            {t.ueber_uns.punkte.map((p, i) => (
+              <div className="pillar reveal" key={i}>
                 <h3 className="h3">{p.titel}</h3>
                 <p>{p.text}</p>
-                {p.link && <BtnLink to={p.link.to} className="textlink">{p.link.label}</BtnLink>}
+                {p.link_ziel && p.link_text && <BtnLink to={p.link_ziel} className="textlink">{p.link_text}</BtnLink>}
               </div>
             ))}
           </div>
@@ -70,14 +47,13 @@ export default function Home() {
         <div className="container">
           <div className="split">
             <div className="split__body reveal">
-              <h2 className="h2" style={{ color: "#fff" }}>{MARKE} in Zahlen</h2>
-              <p className="lead" style={{ color: "rgba(255,255,255,.82)", marginTop: 18 }}>
-                Wir bringen Studierende verschiedener Hochschulen mit Unternehmen aus Wiesbaden
-                und der Region zusammen.
-              </p>
+              <h2 className="h2" style={{ color: "#fff" }}>{t.zahlen.titel}</h2>
+              <p className="lead" style={{ color: "rgba(255,255,255,.82)", marginTop: 18 }}>{t.zahlen.text}</p>
             </div>
             <div className="stats reveal" style={{ "--d": "120ms" }}>
-              {STATS.map((st) => <Stat key={st.label} {...st} />)}
+              {t.zahlen.kennzahlen.map((k, i) => (
+                <Stat key={i} zahl={Number(k.zahl) || 0} suffix={k.zusatz || ""} label={k.beschriftung} />
+              ))}
             </div>
           </div>
         </div>
@@ -92,14 +68,12 @@ export default function Home() {
             </div>
             <div className="split__body">
               <div className="reveal">
-                <h2 className="h2">Unsere Werte</h2>
-                <p className="lead">
-                  Diese Grundsätze gelten in jedem Projekt und in der Zusammenarbeit innerhalb des Vereins.
-                </p>
+                <h2 className="h2">{t.werte.titel}</h2>
+                {t.werte.text && <p className="lead">{t.werte.text}</p>}
               </div>
               <dl className="values" data-stagger="70">
-                {WERTE.map((w) => (
-                  <div className="values__row reveal" key={w.titel}>
+                {t.werte.liste.map((w, i) => (
+                  <div className="values__row reveal" key={i}>
                     <dt>{w.titel}</dt>
                     <dd>{w.text}</dd>
                   </div>
@@ -113,10 +87,7 @@ export default function Home() {
       {/* ===================== RESSORTS ===================== */}
       <section className="section" id="departments">
         <div className="container">
-          <SectionHead
-            titel="Unsere Ressorts"
-            lead="Die Vereinsarbeit ist in Ressorts aufgeteilt. Jedes Ressort verantwortet einen klar umrissenen Bereich."
-          />
+          <SectionHead titel={t.ressorts.titel} lead={t.ressorts.text} />
           <div className="grid grid-3" data-stagger="80">
             {ressortItems.map((r, i) => {
               const Icon = RESSORT_ICONS[i % RESSORT_ICONS.length];
@@ -140,16 +111,10 @@ export default function Home() {
         <div className="container">
           <div className="split">
             <div className="split__body reveal">
-              <p className="eyebrow">Netzwerk</p>
-              <h2 className="h2" style={{ marginTop: 10 }}>Mitglied im JCNetwork e.V.</h2>
-              <p className="lead">
-                {MARKE} ist Mitglied im JCNetwork, einem bundesweiten Dachverband studentischer
-                Unternehmensberatungen in Deutschland.
-              </p>
-              <p style={{ color: "var(--muted)" }}>
-                Über den Verband tauschen wir uns mit studentischen Beratungen aus ganz Deutschland aus,
-                bilden uns gemeinsam weiter und knüpfen Kontakte zu Unternehmen.
-              </p>
+              {t.netzwerk.kicker && <p className="eyebrow">{t.netzwerk.kicker}</p>}
+              <h2 className="h2" style={{ marginTop: 10 }}>{t.netzwerk.titel}</h2>
+              <p className="lead">{t.netzwerk.text}</p>
+              {t.netzwerk.text2 && <p style={{ color: "var(--muted)" }}>{t.netzwerk.text2}</p>}
               <p>
                 <a className="textlink" href="https://www.jcnetwork.de" target="_blank" rel="noopener noreferrer">
                   Mehr zum JCNetwork
@@ -167,10 +132,7 @@ export default function Home() {
       {galerieItems.length > 0 && (
         <section className="section" id="galerie">
           <div className="container">
-            <SectionHead
-              titel="Einblicke"
-              lead="Schulungstage, Workshops und Projektarbeit mit unseren Partnern."
-            />
+            <SectionHead titel={t.galerie.titel} lead={t.galerie.text} />
             <div className="grid grid-3" id="galerie-grid" data-stagger="80">
               {galerieItems.map((g) => (
                 <figure className="gallery-card reveal" key={g.bild}>
@@ -190,14 +152,15 @@ export default function Home() {
         <div className="container">
           <div className="split reveal">
             <div>
-              <h2 className="h2" style={{ color: "#fff" }}>Sprechen Sie uns an</h2>
-              <p className="lead" style={{ color: "rgba(255,255,255,.82)", marginTop: 16 }}>
-                Ob Projektanfrage, Kooperation oder Interesse an einer Mitgliedschaft – schreiben Sie uns
-                an <a href={`mailto:${einstellungen.email}`} style={{ color: "#fff", textDecoration: "underline", textUnderlineOffset: 3 }}>{einstellungen.email}</a> oder
-                nutzen Sie das Kontaktformular.
+              <h2 className="h2" style={{ color: "#fff" }}>{t.kontakt.titel}</h2>
+              <p className="lead" style={{ color: "rgba(255,255,255,.82)", marginTop: 16 }}>{t.kontakt.text}</p>
+              <p style={{ marginTop: 12 }}>
+                <a href={`mailto:${einstellungen.email}`} style={{ color: "#fff", textDecoration: "underline", textUnderlineOffset: 3 }}>
+                  {einstellungen.email}
+                </a>
               </p>
             </div>
-            <div className="btn-row" style={{ justifyContent: "flex-end" }}>
+            <div className="btn-row btn-row--end">
               <BtnLink to="/kontakt?anliegen=projekt" className="btn btn--light" withArrow>Projekt anfragen</BtnLink>
               <BtnLink to="/kontakt" className="btn btn--ghost">Kontakt aufnehmen</BtnLink>
             </div>

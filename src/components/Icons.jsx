@@ -233,3 +233,26 @@ export function Clock() {
 /* Reihenfolge der Ressort-Icons – greift zyklisch, falls im CMS
    mehr Ressorts angelegt werden als Icons vorhanden sind. */
 export const RESSORT_ICONS = [Handshake, Megaphone, Users, CalendarCheck, Monitor, BarChart];
+
+/* Symbole, die im CMS per Name gewählt werden können. Die Namen müssen
+   mit den Optionen in public/admin/config.yml übereinstimmen. */
+export const SYMBOLE = {
+  "pfeil-hoch": ArrowUpCircle,
+  "funke": Sparkle,
+  "blitz": Bolt,
+  "personen": Users,
+  "handschlag": Handshake,
+  "bildschirm": Monitor,
+  "zahnrad": Gear,
+  "diagramm": BarChart,
+  "megafon": Megaphone,
+  "buch": BookOpen,
+  "dokument": FileLines,
+  "dokument-einfach": FileSimple,
+  "medaille": Medal,
+  "kalender": CalendarCheck,
+};
+
+export function symbol(name) {
+  return SYMBOLE[name] || Sparkle;
+}

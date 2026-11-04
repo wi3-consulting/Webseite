@@ -88,7 +88,7 @@ export default function Home() {
       <section className="section" id="departments">
         <div className="container">
           <SectionHead titel={t.ressorts.titel} lead={t.ressorts.text} />
-          <div className="grid grid-3" data-stagger="80">
+          <div className="grid grid-3 grid-fill" data-stagger="80">
             {ressortItems.map((r, i) => {
               const Icon = RESSORT_ICONS[i % RESSORT_ICONS.length];
               return (

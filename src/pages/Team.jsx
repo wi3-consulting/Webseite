@@ -56,7 +56,7 @@ export default function Team() {
           <SectionHead titel={t.ressortleitungen.titel} lead={t.ressortleitungen.text} />
           {/* Leitet sich aus content/ressorts.json ab – wer dort als
               Ressortleitung eingetragen ist, erscheint hier automatisch. */}
-          <div className="grid grid-3" data-stagger="80">
+          <div className="grid grid-3 grid-fill" data-stagger="80">
             {ressortItems.map((r, i) => {
               const Icon = RESSORT_ICONS[i % RESSORT_ICONS.length];
               return (

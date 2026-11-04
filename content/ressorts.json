@@ -34,16 +34,8 @@
     },
     {
       "bild": "/assets/uploads/ressort-it.jpg",
-      "titel": "IT",
-      "beschreibung": "Technische Infrastruktur bereitstellen und weiterentwickeln, Tools einführen, Website-Pflege, Datenmanagement und Digitalisierung interner Prozesse.",
-      "datum": "17.11.2025",
-      "ressortleiter": "",
-      "ressortleiter_bild": ""
-    },
-    {
-      "bild": "/assets/uploads/ressort-controlling.jpg",
-      "titel": "Controlling",
-      "beschreibung": "Finanzielle Transparenz, Kennzahlen, Planung und wirtschaftliche Steuerung für nachhaltige Entscheidungen.",
+      "titel": "IT & Controlling",
+      "beschreibung": "Technische Infrastruktur, Tools, Website-Pflege und Datenmanagement sowie finanzielle Transparenz, Kennzahlen und Planung für fundierte Entscheidungen.",
       "datum": "17.11.2025",
       "ressortleiter": "",
       "ressortleiter_bild": ""

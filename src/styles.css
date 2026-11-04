@@ -202,6 +202,14 @@ p{ margin:0; }
 .grid-2{ grid-template-columns:repeat(2,1fr); }
 .grid-3{ grid-template-columns:repeat(3,1fr); }
 .grid-4{ grid-template-columns:repeat(4,1fr); }
+/* Dreier-Raster ohne Lücke am Ende: Bleiben in der letzten Reihe zwei
+   Karten übrig, teilen sie sich die volle Breite; bleibt eine übrig, steht
+   sie mittig. So passt das Raster zu jeder Ressort-Anzahl aus dem CMS. */
+.grid-fill{ grid-template-columns:repeat(6,1fr); }
+.grid-fill > *{ grid-column:span 2; }
+.grid-fill > :nth-child(3n+1):nth-last-child(2),
+.grid-fill > :nth-child(3n+2):last-child{ grid-column:span 3; }
+.grid-fill > :nth-child(3n+1):last-child{ grid-column:3 / span 2; }
 
 .card{
   background:var(--paper); border:1px solid var(--line-soft); border-radius:var(--radius-lg);
@@ -400,6 +408,8 @@ p{ margin:0; }
   .split--reverse .split__media{ order:0; }
   .btn-row--end{ justify-content:flex-start; }
   .grid-3{ grid-template-columns:repeat(2,1fr); }
+  .grid-fill > *{ grid-column:auto !important; }
+  .grid-fill > :nth-child(odd):last-child{ grid-column:1 / -1 !important; }
   .stats{ grid-template-columns:repeat(2,1fr); }
   .pillars{ grid-template-columns:1fr; }
   .pillar:nth-child(odd){ padding-right:4px; border-right:0; }
@@ -415,6 +425,7 @@ p{ margin:0; }
   .btn-row .btn{ flex:1 1 100%; justify-content:center; }
   .values__row{ grid-template-columns:1fr; gap:4px; }
   .grid-2, .grid-3, .grid-4{ grid-template-columns:1fr; }
+  .grid-fill > :nth-child(odd):last-child{ grid-column:auto !important; }
   .stats{ grid-template-columns:1fr 1fr; }
   .process{ grid-template-columns:1fr; }
   .footer__top{ grid-template-columns:1fr; gap:30px; }

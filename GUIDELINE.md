@@ -201,8 +201,8 @@ verwendest es in der passenden Seite unter `src/pages/`.
 3. die Ressortleitungen auf der Team-Seite,
 4. die Übersicht bei „Für Studierende".
 
-Auch die Zahlwörter („Sechs Fachbereiche") zählen sich selbst aus – kommt ein
-Ressort dazu, stimmt der Text weiterhin.
+Texte wie „Unsere Ressorts“ nennen bewusst keine Anzahl – kommt ein Ressort
+dazu oder fällt eines weg, stimmt der Text weiterhin.
 
 ---
 

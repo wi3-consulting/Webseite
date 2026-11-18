@@ -28,6 +28,12 @@ logo_url: /Logo_blau.png
 # auf die Live-Seite.
 publish_mode: editorial_workflow
 
+# Keine Vorschau-Spalte neben den Feldern: Sie zeigt nur unformatierten
+# Text und verwirrt mehr, als sie hilft. Das Ergebnis sieht man nach
+# dem Veröffentlichen auf der Website.
+editor:
+  preview: false
+
 collections:
   # ---------------- TEXTE ----------------
   # Die Symbol-Namen müssen zu SYMBOLE in src/components/Icons.jsx passen.
@@ -369,7 +375,7 @@ collections:
               - { label: "Kopfbild", name: "hero_bild", widget: "image" }
               - { label: "Bildbeschreibung Kopfbild", name: "hero_alt", widget: "string", required: false }
               - { label: "Bildausschnitt Kopfbild", name: "hero_ausschnitt", widget: "string", required: false, default: "center center", hint: "Kleinerer Prozentwert zeigt mehr vom oberen Bildrand, z. B. 'center 22%'." }
-              - { label: "Bild im Aufruf-Banner", name: "cta_bild", widget: "image", hint: "Hintergrundbild des Banners „Bereit für frische Perspektiven?“." }
+              - { label: "Bild im Aufruf-Banner", name: "cta_bild", widget: "image", hint: "Hintergrundbild des blauen Banners am Seitenende." }
               - { label: "Bildbeschreibung Banner", name: "cta_alt", widget: "string", required: false }
               - { label: "Bildausschnitt Banner", name: "cta_ausschnitt", widget: "string", required: false, default: "center center" }
 

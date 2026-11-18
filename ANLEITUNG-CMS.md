@@ -43,10 +43,15 @@ aktiv sein.
 6. Falls dein Haupt-Branch nicht `main` heißt, in `public/admin/config.yml` die
    Zeile `branch: main` anpassen (z. B. `master`).
 
-### Redakteure einladen
-Netlify → **Identity → Invite users** → E-Mail eingeben. Die Person bekommt
-eine Einladung, vergibt ein Passwort und kann sich danach unter
-`https://DEINE-DOMAIN/admin/` einloggen.
+### Zugang: ein gemeinsamer Account
+Alle Redakteure nutzen **einen gemeinsamen Account**:
+`it-webseitewi3@wi3-consulting.de`. Das Passwort verschickt die IT separat an
+die Personen, die mitarbeiten sollen – es steht bewusst nirgends im Repository.
+
+Verlässt jemand das Team oder ist das Passwort nicht mehr sicher: in Netlify
+unter **Identity** das Passwort des Accounts zurücksetzen und es den
+verbleibenden Personen neu schicken. Weil alle denselben Account nutzen, kann
+das CMS nicht unterscheiden, wer etwas geändert oder veröffentlicht hat.
 
 ---
 
@@ -60,9 +65,11 @@ sie veröffentlicht wird.
 2. Links den Bereich wählen, z. B. **„Texte"** → **„Startseite"**.
 3. Text ändern bzw. Bild hochladen.
 4. Oben **„Speichern"**. Die Änderung ist jetzt ein **Entwurf** – noch nicht live.
-5. Oben den Status auf **„Bereit"** stellen, wenn du fertig bist.
+5. Oben auf **„Status: Entwurf"** klicken und **„Abgeschlossen"** wählen, wenn
+   du fertig bist. („Zur Überprüfung" ist ein optionaler Zwischenschritt.)
 6. Die Person, die freigibt, öffnet oben den Reiter **„Arbeitsablauf"**, prüft
-   den Eintrag in der Spalte „Bereit" und klickt **„Veröffentlichen"**.
+   den Eintrag in der Spalte „Abgeschlossen" und klickt
+   **„Veröffentliche Änderungen"**.
 
 Netlify baut die Seite danach automatisch neu – nach ein bis zwei Minuten ist
 die Änderung live. Technisch kann jeder eingeloggte Nutzer veröffentlichen;
@@ -80,14 +87,14 @@ Vorstand gibt frei).
 
 ### Ein neues Galerie-Bild hinzufügen
 **Galerie (Startseite)** → **„Galerie-Bilder"** → unten **„Bild hinzufügen"** →
-Bild hochladen, Bildbeschreibung (Alt-Text) eintragen → Speichern → Bereit →
-Veröffentlichen. Genauso lassen sich Bilder **austauschen** (Bild im Eintrag
+Bild hochladen, Bildbeschreibung (Alt-Text) eintragen → Speichern →
+Abgeschlossen → Veröffentlichen. Genauso lassen sich Bilder **austauschen** (Bild im Eintrag
 ersetzen) oder **entfernen** (Eintrag löschen).
 
 ### Ein Kopfbild austauschen
 **Seitenbilder** → gewünschte Seite aufklappen (z. B. „Für Unternehmen") →
-beim **Kopfbild** auf das Bild klicken → neues Bild wählen → Speichern →
-Bereit → Veröffentlichen.
+beim **Kopfbild** auf **„Wähle ein anderes Bild"** klicken → neues Bild
+hochladen → Speichern → Abgeschlossen → Veröffentlichen.
 
 ### Gut zu wissen
 - Der **Alt-Text** beschreibt das Bild für Screenreader und Suchmaschinen. Kurz
